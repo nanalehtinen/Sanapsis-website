@@ -23,7 +23,7 @@ Choices I made that you may want to change:
 
 ## Sanapsis+ page
 
-- **First paragraph (large text):** Sanapsis+ is designed for people with speech and communication difficulties caused by neurological conditions, such as aphasia, stroke, traumatic brain injury, or progressive neurological diseases.
+- **First paragraph (large text):** Sanapsis+ is designed for people with speech and communication difficulties due to neurological conditions, such as aphasia, stroke, traumatic brain injury, or progressive neurological diseases.
 - **Second paragraph:** With Sanapsis+, you can activate and strengthen word-level communication in four areas: speaking, listening, reading, and writing.
 - **Third paragraph:** Alongside the exercises, the app offers ideas and tips for practicing speech and language in everyday life, on your own or with a loved one. The tips draw on ordinary situations and your surroundings, because small breakthroughs in daily life go a long way!
 - **Download box:** Sanapsis+ is easy to use, and you can start practicing in just a few taps!
