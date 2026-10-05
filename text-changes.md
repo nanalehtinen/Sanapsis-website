@@ -2,6 +2,9 @@
 
 Everything not listed here is copied word for word from www.sanapsis.com (pages saved on 4 Oct 2026), or from the H mockups you approved.
 
+## Approval (5 Oct 2026)
+Nana approved all Finnish and English texts, including Claude's drafts: no yellow highlight on the EN and FI sites. Only `[brackets]` placeholders for missing content (videos, blog images and excerpts, FAQ, FI privacy notice) stay yellow. Swedish drafts are still unapproved.
+
 ## Finnish texts from Nana (5 Oct 2026)
 Your Finnish texts for the SanapsisPro, Sanapsis+, Support and About pages are used word for word, without highlight (stored in `translations.py`, NANA_FI...). Small changes I made:
 - Support heading: "Ilmoita virheestä." without the full stop (headings have none elsewhere).

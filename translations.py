@@ -9,7 +9,8 @@ Swedish follows the Finland-Swedish terms on the current Swedish page
 (talterapeut, not logoped).
 """
 
-APPROVED = False  # True removes the yellow highlight from every draft
+# Languages whose drafts Nana has approved (no highlight). Nana approved FI and EN on 5 Oct 2026.
+APPROVED = {"fi", "en"}
 
 T = {
     # Navigation and footer

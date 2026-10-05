@@ -52,7 +52,7 @@ def ph(text):
 
 def draft(text, lang):
     """Claude's draft translation: highlighted until Nana approves it (translations.py)."""
-    if APPROVED:
+    if lang in APPROVED:
         return text
     return f'<span class="ph" lang="{lang}">{text}</span>'
 
