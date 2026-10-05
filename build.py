@@ -68,7 +68,7 @@ def fi_ph(english):
 # Interface words. Finnish entries are placeholders unless the current site has them.
 UI = {
     "en": {
-        "nav_pro": "Sanapsis Pro", "nav_plus": "Sanapsis+", "nav_support": "Support",
+        "nav_pro": "SanapsisPro", "nav_plus": "Sanapsis+", "nav_support": "Support",
         "nav_blog": "Blog", "nav_about": "About", "menu": "Open menu", "skip": "Skip to content",
         "f_bug": "Report a bug", "f_survey": "User survey", "f_privacy": "Privacy notice", "f_contact": "Contact",
         "lang_label": "Language",
@@ -82,7 +82,7 @@ def ui_placeholders(code, privacy_word, lang_word):
             return draft(T[e][LANGS.index(code) - 1], code)
         return ph(f"{code.upper()}: {e}")
     return {
-        "nav_pro": "Sanapsis Pro", "nav_plus": "Sanapsis+", "nav_support": label("Support"),
+        "nav_pro": "SanapsisPro", "nav_plus": "Sanapsis+", "nav_support": label("Support"),
         "nav_blog": label("Blog"), "nav_about": label("About"), "menu": "Menu", "skip": "Skip to content",
         "f_bug": label("Report a bug"), "f_survey": label("User survey"),
         "f_privacy": privacy_word, "f_contact": label("Contact"),
@@ -196,7 +196,7 @@ def home(lang):
             intro="Two separate apps, each supporting a different part of the therapy journey.",
             pro_eyebrow="For speech-language pathologists",
             pro_desc="SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials.",
-            pro_more="Learn more about Sanapsis Pro",
+            pro_more="Learn more about SanapsisPro",
             plus_eyebrow="For practice at home",
             plus_desc="If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.",
             plus_more="Learn more about Sanapsis+",
@@ -207,7 +207,7 @@ def home(lang):
             intro=fi_ph("Two separate apps, each supporting a different part of the therapy journey."),
             pro_eyebrow=fi_ph("For speech-language pathologists"),
             pro_desc=fi_ph("SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials."),
-            pro_more=fi_ph("Learn more about Sanapsis Pro"),
+            pro_more=fi_ph("Learn more about SanapsisPro"),
             plus_eyebrow=fi_ph("For practice at home"),
             plus_desc=fi_ph("If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you."),
             plus_more=fi_ph("Learn more about Sanapsis+"),

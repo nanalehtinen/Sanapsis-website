@@ -31,7 +31,7 @@ T = {
     "SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials.": (
         "SanapsisPro on tehty puheterapeuteille. Se muuttaa iPadisi joustavaksi ja monipuoliseksi terapiaideoiden ja -materiaalien kirjastoksi.",
         "SanapsisPro är gjord för talterapeuter. Den förvandlar din iPad till ett flexibelt och mångsidigt bibliotek med terapiidéer och material."),
-    "Learn more about Sanapsis Pro": ("Lue lisää SanapsisProsta", "Läs mer om SanapsisPro"),
+    "Learn more about SanapsisPro": ("Lue lisää SanapsisProsta", "Läs mer om SanapsisPro"),
     "For practice at home": ("Harjoitteluun kotona", "För träning hemma"),
     "If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.": (
         "Jos etsit tapaa harjoitella puhetta ja kommunikointia kotona, Sanapsis+ on tehty sinulle.",
@@ -158,7 +158,7 @@ NANA_FI = {
     "Supporting Speech Therapy with Technology": "Teknologia puheterapian tukena",
     "Two separate apps, each supporting a different part of the therapy journey.":
         "Sanapsis-perheeseen kuuluu kaksi erillistä sovellusta, jotka tukevat puheterapeuttista harjoittelua eri tavoilla.",
-    "Learn more about Sanapsis Pro": "Lue lisää sovelluksesta SanapsisPro",
+    "Learn more about SanapsisPro": "Lue lisää sovelluksesta SanapsisPro",
     "Learn more about Sanapsis+": "Lue lisää sovelluksesta Sanapsis+",
     # Support page
     "Report a bug": "Ilmoita virheestä",

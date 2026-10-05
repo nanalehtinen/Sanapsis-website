@@ -50,7 +50,7 @@ Swedish uses the Finland-Swedish word *talterapeut*, as on your current Swedish 
   - **FI:** SanapsisPro on tehty puheterapeuteille. Se muuttaa iPadisi joustavaksi ja monipuoliseksi terapiaideoiden ja -materiaalien kirjastoksi.
   - **SV:** SanapsisPro är gjord för talterapeuter. Den förvandlar din iPad till ett flexibelt och mångsidigt bibliotek med terapiidéer och material.
 
-- **EN:** Learn more about Sanapsis Pro
+- **EN:** Learn more about SanapsisPro
   - **FI:** Lue lisää SanapsisProsta
   - **SV:** Läs mer om SanapsisPro
 
