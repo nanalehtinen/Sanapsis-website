@@ -199,6 +199,7 @@ NANA_FI_ABOUT = [
     "Vuonna 2021 julkaisimme SanapsisPron rinnalle kuntoutujien omatoimiseen harjoitteluun suunnitellun sovelluksen, Sanapsis+.",
     "Suuri osa Sanapsis-perheen sovellusten kehitystyöstä on toteutunut yhteistyössä upeiden asiakkaidemme kanssa. Jos olet tarkkana, saatat jopa löytää materiaaleista muutamia Puheklinikalta tuttuja kasvoja. Se jos mikä on tae siitä, että materiaalit on suunniteltu, kehitetty ja testattu nimenomaan elämänmakuiseen ja aktiiviseen puheterapiakäyttöön!",
     "Sanapsis-perheen sovellusten kehitystyö jatkuu edelleen, ja kuulemme aina mielellämme ideoita, käyttökokemuksia ja kehitysehdotuksia. Voit lähettää meille risuja, ruusuja ja muitakin kuulumisia alla olevan painikkeen kautta.",
+    'Jos haluat lukea lisää ajatuksiani aikuisten puheterapiasta ja erityisesti teknologian roolista puheterapiassa, käy kurkkaamassa <a href="{blog}">blogiani</a> "All The Things I Love About Speech Therapy With Adults" (blogi luettavissa vain englanniksi).',
     "Jos olet puheterapeutti ja haluat kokeilla Sanapsis+-sovellusta asiakkaidesi kanssa, ota yhteyttä, niin järjestämme sinulle mahdollisuuden ladata sovellus maksutta.",
 ]
 

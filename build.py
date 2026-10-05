@@ -439,7 +439,7 @@ def about(lang):
     else:
         title, hi, button = fi_ph("About Sanapsis"), fi_ph("Hi there."), fi_ph("Get in touch")
         if lang == "fi":
-            paras = [p.format(clinic=LINKS["clinic"]) for p in NANA_FI_ABOUT]
+            paras = [p.format(clinic=LINKS["clinic"], blog=url(lang, "blog/")) for p in NANA_FI_ABOUT]
         else:
             paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
     ps = "\n".join(f"          <p>{p}</p>" for p in paras)
