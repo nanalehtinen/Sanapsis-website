@@ -77,7 +77,7 @@ T = {
         "iPad. Sovelluksessa ei ole sovelluksen sisäisiä ostoja, ei nyt eikä tulevaisuudessa. Kaikki päivitykset, myös uudet tehtävät, sisältyvät hintaan.",
         "iPad. Appen har inga köp i appen, varken nu eller i framtiden. Alla uppdateringar, även nya övningar, ingår utan extra kostnad."),
     "Download on the App Store": ("Lataa App Storesta", "Ladda ner från App Store"),
-    "Try Sanapsis Lite first": ("Kokeile ensin Sanapsis Liteä", "Prova Sanapsis Lite först"),
+    "Try SanapsisLite first": ("Kokeile ensin SanapsisLitea", "Prova SanapsisLite först"),
     "Six exercise categories": ("Kuusi tehtäväkategoriaa", "Sex övningskategorier"),
     "Important information": ("Tärkeää tietoa", "Viktig information"),
     "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.": (
@@ -148,7 +148,7 @@ NANA_FI = {
     "Get SanapsisPro": "Hanki SanapsisPro",
     "iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.":
         "Sanapsis on kertahankinta. Sovelluksessa ei ole sovelluksen sisäisiä ostoja, ei nyt eikä tulevaisuudessa. Kaikki päivitykset, myös uudet tehtävät, ovat maksuttomia.",
-    "Try Sanapsis Lite first": "Kokeile Sanapsis-Lite sovellusta",
+    "Try SanapsisLite first": "Kokeile SanapsisLite sovellusta",
     'Exercises such as "Is this simile true", which works especially well with high-level TBI patients.':
         "Tehtäviä, kuten ”Pitääkö vertaus paikkansa”",
     "Important information": "Huomaathan!",
@@ -188,8 +188,7 @@ NANA_FI_PLUS = dict(
 # About page, Finnish (HTML allowed; {clinic} is the Puheklinikka link).
 NANA_FI_ABOUT = [
     "Olen Nana, aikuisten puheterapiasta erityisen innostunut puheterapeutti sekä Sanapsis-sovellusten pääsuunnittelija ja kehittäjä. Onpa kiva tutustua!",
-    'Olen työskennellyt aikuisneurologisten asiakkaiden kanssa vuodesta 2004. Vuonna 2006 perustin aikuisneurologiseen puheterapiaan erikoistuneen yrityksen, <a href="{clinic}">Puheklinikan</a>, jossa myös idea Sanapsis-sovelluksesta alkoi kehittyä.',
-    "Sanapsis syntyi alun perin omaksi työkaluksemme. Halusimme terapiatyön tueksi välineen, joka helpottaa terapian suunnittelua ja toteutusta tarjoamalla monipuolisia ideoita ja työskentelymahdollisuuksia sekä nopean pääsyn materiaaliin, joka heijastaa asiakkaidemme omaa arkea ja elinympäristöä. Yhtä tärkeää meille oli, että sovellus mahdollistaa tavoitteiden joustavan asettamisen ja tukee merkityksellistä vuorovaikutusta terapeutin ja asiakkaan välillä.",
+    'Olen työskennellyt aikuisneurologisten asiakkaiden kanssa vuodesta 2004. Idea Sanapsiksesta nousi suorasta terapiatyötarpeesta ja Sanapsis syntyi alun perin yksityisen puheterapiavastaanoton, <a href="{clinic}">Puheklinikan</a>, omaksi työkaluksi. Kaipasimme terapiatyön tueksi työvälinettä, joka helpottaa terapian suunnittelua ja toteutusta tarjoamalla monipuolisia ideoita ja työskentelymahdollisuuksia sekä nopean pääsyn materiaaliin, joka heijastaa asiakkaidemme omaa arkea ja elinympäristöä. Yhtä tärkeää meille oli, että sovellus mahdollistaa tavoitteiden joustavan asettamisen ja tukee merkityksellistä vuorovaikutusta terapeutin ja asiakkaan välillä.',
     "Monien kokeilujen ja kehitysvaiheiden myötä SanapsisPro alkoi vähitellen muistuttaa sitä työkalua, jota olimme tavoitelleet. Käsissämme oli selkeä ja monipuolinen tuki joustavaan ja vuorovaikutteiseen terapiatyöhön. Lisäsimme mukaan yksityiskohtaiset ohjeet ja runsaasti ideoita erilaisista tavoista hyödyntää sovelluksen tehtäviä. Sitten olikin mahdollista jakaa meille tärkeä työkalu kollegoille! SanapsisPron ensimmäinen versio julkaistiin App Storessa vuonna 2012.",
     "Vuonna 2021 julkaisimme SanapsisPron rinnalle kuntoutujien omatoimiseen harjoitteluun suunnitellun sovelluksen, Sanapsis+.",
     "Suuri osa Sanapsis-perheen sovellusten kehitystyöstä on toteutunut yhteistyössä upeiden asiakkaidemme kanssa. Jos olet tarkkana, saatat jopa löytää materiaaleista muutamia Puheklinikalta tuttuja kasvoja. Se jos mikä on tae siitä, että materiaalit on suunniteltu, kehitetty ja testattu nimenomaan elämänmakuiseen ja aktiiviseen puheterapiakäyttöön!",

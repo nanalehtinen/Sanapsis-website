@@ -141,9 +141,9 @@ Swedish uses the Finland-Swedish word *talterapeut*, as on your current Swedish 
   - **FI:** Lataa App Storesta
   - **SV:** Ladda ner från App Store
 
-- **EN:** Try Sanapsis Lite first
-  - **FI:** Kokeile Sanapsis-Lite sovellusta *(your text)*
-  - **SV:** Prova Sanapsis Lite först
+- **EN:** Try SanapsisLite first
+  - **FI:** Kokeile SanapsisLite sovellusta *(your text)*
+  - **SV:** Prova SanapsisLite först
 
 - **EN:** Six exercise categories
   - **FI:** Kuusi tehtäväkategoriaa

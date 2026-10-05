@@ -274,7 +274,7 @@ def pro(lang):
             <div class="title">{f('Get SanapsisPro')}</div>
             <div class="note">{f('iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.')}</div>
             <a class="button pro" href="{LINKS['pro_store'][lang]}">{f('Download on the App Store')}</a>
-            <a class="text-link pro" href="{LINKS['lite_store']}">{f('Try Sanapsis Lite first')}</a>
+            <a class="text-link pro" href="{LINKS['lite_store']}">{f('Try SanapsisLite first')}</a>
           </div>
         </div>
         <div class="shots">
@@ -451,7 +451,7 @@ def support(lang):
           <p class="body-text" style="margin: 0"><strong>{f('Found a bug in SanapsisPro or Sanapsis+?')}</strong> {f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')}</p>
           <label>{f('Name')}<input type="text" name="name" autocomplete="name"></label>
           <label>{f('Email')}<input type="email" name="email" autocomplete="email"></label>
-          <label>{f('App')}<select name="app"><option>SanapsisPro</option><option>Sanapsis+</option><option>Sanapsis Lite</option></select></label>
+          <label>{f('App')}<select name="app"><option>SanapsisPro</option><option>Sanapsis+</option><option>SanapsisLite</option></select></label>
           <label>{f('Message')}<textarea name="message" rows="5"></textarea></label>
           <label>{f('Screenshot (optional)')}<input type="file" name="screenshot" accept="image/*"></label>
           <button class="button" type="submit">{f('Send')}</button>

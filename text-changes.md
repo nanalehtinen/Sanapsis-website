@@ -8,7 +8,9 @@ Your Finnish texts for the SanapsisPro, Sanapsis+, Support and About pages are u
 - Footer link: "Raportoi bugi" with a capital R (your note "ILMOITA VIRHEESTÄ -> raportoi bugi"). The Support page heading stays "Ilmoita virheestä".
 - About: "Puheklinikan" links to puheklinikka.net, like the English page does.
 - SanapsisPro intro: your first paragraph is the large lead text; the SanapsisLite paragraph is below it.
-- Kept as you wrote them, please check: "Huomaathan!" (Pro, with !) vs "Huomaathan" (Sanapsis+, without); the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?); the Lite name is written three ways (SanapsisLite, Sanapsis-Lite, Sanapsis Lite).
+- Kept as you wrote them, please check: "Huomaathan!" (Pro, with !) vs "Huomaathan" (Sanapsis+, without); the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?).
+- SanapsisLite is written as one word everywhere (Nana, 5 Oct), also in English ("Try SanapsisLite first", form menu).
+- About, paragraph 2: your new text (5 Oct). It also replaces the start of the old third paragraph ("Sanapsis syntyi alun perin omaksi työkaluksemme. Halusimme terapiatyön tueksi välineen"), so the old paragraphs 2 and 3 are now one paragraph ending "...terapeutin ja asiakkaan välillä."
 - Blog: English only on all three language sites (your instruction). Only the menu word "Blogi"/"Blogg" is translated.
 - Still Claude's highlighted drafts on the Finnish site: home page, menu and footer words, Pro category names and most category texts, "Lataa App Storesta", "Hanki Sanapsis+", "Arjen sanastoa", form labels (Nimi, Sähköposti...), "Ota yhteyttä" button.
 
