@@ -13,5 +13,4 @@ Preview with `--preview` adds `index.html` to links, for hosts that don't open f
 Not done yet:
 - The bug report form does not send anything; the form service depends on the hosting choice.
 - Blog posts, Pro category videos, FAQ.
-- New flat logo (replace `docs/assets/img/logo.jpg`).
 - Redirects from the old Squarespace addresses (/home, /contact, /sanapsis-plus, /sanapsis-fi, /report-a-bug, /privacy-notice).

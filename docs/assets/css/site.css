@@ -52,7 +52,7 @@ a:hover { color: #b35f00; }
   gap: 16px;
   padding: 28px 56px;
 }
-.logo img { height: 48px; width: auto; display: block; }
+.logo img { height: 44px; width: auto; display: block; }
 .main-nav {
   display: flex;
   flex-wrap: wrap;
@@ -265,7 +265,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
   color: #fff;
   font-size: 14px;
 }
-.site-footer .brand { font-family: var(--heading-font); font-weight: 600; letter-spacing: 1px; }
+.site-footer .brand { height: 32px; width: auto; display: block; }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: var(--heading-font); font-weight: 600; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
 .footer-nav a { color: #fff; text-decoration: none; padding: 6px 0; }
 .footer-nav a:hover { text-decoration: underline; color: #fff; }
