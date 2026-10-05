@@ -199,7 +199,7 @@ NANA_FI_ABOUT = [
     "Vuonna 2021 julkaisimme SanapsisPron rinnalle kuntoutujien omatoimiseen harjoitteluun suunnitellun sovelluksen, Sanapsis+.",
     "Suuri osa Sanapsis-perheen sovellusten kehitystyöstä on toteutunut yhteistyössä upeiden asiakkaidemme kanssa. Jos olet tarkkana, saatat jopa löytää materiaaleista muutamia Puheklinikalta tuttuja kasvoja. Se jos mikä on tae siitä, että materiaalit on suunniteltu, kehitetty ja testattu nimenomaan elämänmakuiseen ja aktiiviseen puheterapiakäyttöön!",
     "Sanapsis-perheen sovellusten kehitystyö jatkuu edelleen, ja kuulemme aina mielellämme ideoita, käyttökokemuksia ja kehitysehdotuksia. Voit lähettää meille risuja, ruusuja ja muitakin kuulumisia alla olevan painikkeen kautta.",
-    'Jos haluat lukea lisää ajatuksiani aikuisten puheterapiasta ja erityisesti teknologian roolista puheterapiassa, käy kurkkaamassa <a href="{blog}">blogiani</a> "All The Things I Love About Speech Therapy With Adults" (blogi luettavissa vain englanniksi).',
+    'Jos haluat lukea lisää ajatuksiani aikuisten puheterapiasta ja erityisesti teknologian roolista puheterapiassa, käy kurkkaamassa blogiani <a href="{blog}">"All The Things I Love About Speech Therapy With Adults"</a> (blogi luettavissa vain englanniksi).',
     "Jos olet puheterapeutti ja haluat kokeilla Sanapsis+-sovellusta asiakkaidesi kanssa, ota yhteyttä, niin järjestämme sinulle mahdollisuuden ladata sovellus maksutta.",
 ]
 
@@ -251,6 +251,6 @@ EN_DRAFT_ABOUT = [
     "After many rounds of testing and development, <strong>SanapsisPro</strong> gradually became the tool we had been aiming for: clear, versatile support for flexible, interactive therapy. We added detailed instructions and lots of ideas for different ways to use the exercises, and then it was ready to share with colleagues. The first version of SanapsisPro was released on the App Store in 2012. In 2021, we added <strong>Sanapsis+</strong> to the family, an app designed for clients to practice independently.",
     "Much of the development of the Sanapsis apps has been done together with our wonderful clients. If you look closely, you may even spot a few familiar faces from Puheklinikka in the materials. That’s the best proof we can offer that the materials were designed, developed, and tested for real-life, active speech therapy!",
     "The work to develop the Sanapsis apps is very much ongoing and we love to hear your ideas, experiences, and suggestions. Send us your feedback, good or bad, using the button below. We also love a note just saying Hi!",
-    NANA('Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to <a href="{blog}">our blog</a>, where I share thoughts on All The Things I Love About Speech Therapy With Adults.'),
+    NANA('Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to our blog <a href="{blog}">All The Things I Love About Speech Therapy With Adults</a>.'),
     "If you’re a speech-language pathologist and would like to try Sanapsis+ with your clients, get in touch and we’ll arrange a free download for you. Looking forward to hearing from you!",
 ]

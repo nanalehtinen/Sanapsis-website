@@ -47,7 +47,7 @@ Choices I made that you may want to change:
 
 5. The work to develop the Sanapsis apps is very much ongoing and we love to hear your ideas, experiences, and suggestions. Send us your feedback, good or bad, using the button below. We also love a note just saying Hi!
 
-6. Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to our blog, where I share thoughts on All The Things I Love About Speech Therapy With Adults. *(your text)*
+6. Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to our blog All The Things I Love About Speech Therapy With Adults. *(your text)*
 
 7. If you’re a speech-language pathologist and would like to try Sanapsis+ with your clients, get in touch and we’ll arrange a free download for you. Looking forward to hearing from you!
 
