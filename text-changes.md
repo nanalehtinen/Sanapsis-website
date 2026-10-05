@@ -2,7 +2,17 @@
 
 Everything not listed here is copied word for word from www.sanapsis.com (pages saved on 4 Oct 2026), or from the H mockups you approved.
 
-## Finnish (Sanapsis+ page, from sanapsis.com/sanapsis-fi)
+## Finnish texts from Nana (5 Oct 2026)
+Your Finnish texts for the SanapsisPro, Sanapsis+, Support and About pages are used word for word, without highlight (stored in `translations.py`, NANA_FI...). Small changes I made:
+- Support heading: "Ilmoita virheestä." without the full stop (headings have none elsewhere).
+- Footer link: "Raportoi bugi" with a capital R (your note "ILMOITA VIRHEESTÄ -> raportoi bugi"). The Support page heading stays "Ilmoita virheestä".
+- About: "Puheklinikan" links to puheklinikka.net, like the English page does.
+- SanapsisPro intro: your first paragraph is the large lead text; the SanapsisLite paragraph is below it.
+- Kept as you wrote them, please check: "Huomaathan!" (Pro, with !) vs "Huomaathan" (Sanapsis+, without); the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?); the Lite name is written three ways (SanapsisLite, Sanapsis-Lite, Sanapsis Lite).
+- Blog: English only on all three language sites (your instruction). Only the menu word "Blogi"/"Blogg" is translated.
+- Still Claude's highlighted drafts on the Finnish site: home page, menu and footer words, Pro category names and most category texts, "Lataa App Storesta", "Hanki Sanapsis+", "Arjen sanastoa", form labels (Nimi, Sähköposti...), "Ota yhteyttä" button.
+
+## Finnish (Sanapsis+ page, from sanapsis.com/sanapsis-fi), superseded by your 5 Oct texts where they overlap
 - Added a missing space: "puheterapeutin ohjauksessa.Sanapsis+" became "ohjauksessa. Sanapsis+".
 - The four area names come from your sentence "puhuminen, kuuntelu, lukeminen ja kirjoittaminen", with a capital first letter: Puhuminen, Kuuntelu, Lukeminen, Kirjoittaminen. (The app itself says "Nimeäminen" for speaking.)
 - Moved "Sanapsis+ on helppokäyttöinen, ja harjoittelun aloittaminen on kirjaimellisesti vain muutaman napautuksen päässä!" into the download box.

@@ -10,7 +10,8 @@ import html
 import os
 import sys
 
-from translations import ABOUT, APPROVED, T
+from translations import (ABOUT, APPROVED, NANA_FI, NANA_FI_ABOUT, NANA_FI_FOOTER_BUG,
+                          NANA_FI_PLUS, NANA_FI_PRO, T)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 if "--out" in sys.argv:
@@ -56,7 +57,9 @@ def draft(text, lang):
 
 
 def fi_ph(english):
-    """Finnish/Swedish text: the draft from translations.py if there is one, else a placeholder."""
+    """Finnish/Swedish text: Nana's text, else Claude's draft (highlighted), else a placeholder."""
+    if CUR_LANG == "fi" and english in NANA_FI:
+        return html.escape(NANA_FI[english], quote=False)
     if english in T:
         return draft(html.escape(T[english][LANGS.index(CUR_LANG) - 1], quote=False), CUR_LANG)
     return ph(f"{CUR_LANG.upper()}: {english}")
@@ -89,6 +92,7 @@ def ui_placeholders(code, privacy_word, lang_word):
 
 # Privacy words come from the current Finnish and Swedish Sanapsis+ pages.
 UI["fi"] = ui_placeholders("fi", "Tietosuojaseloste", "Kieli")
+UI["fi"]["f_bug"] = NANA_FI_FOOTER_BUG
 UI["sv"] = ui_placeholders("sv", "Integritetspolicy", "Språk")
 
 
@@ -254,7 +258,7 @@ def pro(lang):
         "All materials have been specifically developed and tested for adult speech and language therapy. SanapsisPro includes all three languages, English (US), Finnish, and Swedish, in the same download.",
     ]
     f = (lambda s: s) if en else fi_ph
-    paras = [f(p) for p in paras_en]
+    paras = NANA_FI_PRO if lang == "fi" else [f(p) for p in paras_en]
     cats = "\n".join(
         f'        <div class="tile"><div class="video-slot">{ph("VIDEO")}</div><h3>{f(n)}</h3><p>{f(d)}</p></div>'
         for n, d in PRO_CATEGORIES_EN)
@@ -265,7 +269,7 @@ def pro(lang):
           <div class="eyebrow">{f('For speech-language pathologists')}</div>
           <h1>SanapsisPro</h1>
           <p class="lead">{paras[0]}</p>
-          <div class="body-text stack"><p>{paras[1]}</p><p>{paras[2]}</p></div>
+          <div class="body-text stack">{"".join(f"<p>{p}</p>" for p in paras[1:])}</div>
           <div class="get-box">
             <div class="title">{f('Get SanapsisPro')}</div>
             <div class="note">{f('iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.')}</div>
@@ -346,12 +350,14 @@ def plus(lang):
             areas=["Puhuminen", "Kuuntelu", "Lukeminen", "Kirjoittaminen"],
             vocab_title=fi_ph("Everyday vocabulary"),
             vocab="Kaikki Sanapsis+ sovelluksen tehtävät pohjautuvat tuttuihin arjen sanoihin seuraavista kategorioista: koti, esineet, ruoka ja juoma, vaatteet, ympäristö, matkustaminen, vapaa-aika ja verbit. Harjoitukset ja materiaalit ovat sisältyvät sovellukseen kolmella kielellä: suomi, ruotsi ja englanti.",
-            note_title="Huomaa",
+            note_title=fi_ph("Please note"),
             note="Voit käyttää Sanapsis+ -sovellusta itsenäisesti, yhdessä läheisen kanssa tai puheterapeutin ohjauksessa. Sanapsis+ ei korvaa puheterapiaa, emmekä voi taata sen yksilöllistä vaikuttavuutta. Mikäli tarvitset neuvoja tai tukea harjoitteluun, suosittelemme ottamaan yhteyttä laillistettuun puheterapeuttiin.",
             shot="ASSET/img/plus-screen-fi.jpg",
             video="544117078", play="Play the Sanapsis+ intro video (Finnish)",
             shot_alt="Sanapsis+ start screen in Finnish with four activities: Kuuntelu, Nimeäminen, Lukeminen, Kirjoittaminen",
         )
+    if lang == "fi":
+        t.update(NANA_FI_PLUS)
     area_cls = ["speaking", "listening", "reading", "writing"]
     areas = "\n".join(f'        <div class="area {c}">{a}</div>' for c, a in zip(area_cls, t["areas"]))
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/plus-hero.jpg" alt="Smiling older woman on a sofa holding a tablet" style="object-position: center 30%"></div>
@@ -410,7 +416,10 @@ def about(lang):
         paras = paras_en
     else:
         title, hi, button = fi_ph("About Sanapsis"), fi_ph("Hi there."), fi_ph("Get in touch")
-        paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
+        if lang == "fi":
+            paras = [p.format(clinic=LINKS["clinic"]) for p in NANA_FI_ABOUT]
+        else:
+            paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
     ps = "\n".join(f"          <p>{p}</p>" for p in paras)
     body = f"""      <div class="pad page-head"><h1 class="page-title">{title}</h1></div>
       <div class="pad two-col" style="padding-bottom: 48px">
@@ -472,8 +481,8 @@ BLOG_POSTS = [
 
 
 def blog(lang):
-    en = lang == "en"
-    f = (lambda s: s) if en else fi_ph
+    # Nana (5 Oct 2026): the blog is English only, also on the Finnish and Swedish sites.
+    f = lambda s: s
     rows = []
     for date, tag, title in BLOG_POSTS:
         d = date if date else ph("DATE")
@@ -486,7 +495,7 @@ def blog(lang):
           </span>
         </a>""")
     posts = "\n".join(rows)
-    body = f"""      <div class="pad blog-head">
+    body = f"""      <div class="pad blog-head" lang="en">
         <h1 class="page-title">{f('Blog')}</h1>
         <div class="chips">
           <a class="chip active" href="#">{f('All')}</a>
@@ -494,7 +503,7 @@ def blog(lang):
           <a class="chip plus" href="#">Sanapsis+</a>
         </div>
       </div>
-      <div class="posts">
+      <div class="posts" lang="en">
 {posts}
         <div class="older"><a class="text-link" href="#">{f('Older posts')}</a></div>
       </div>"""
