@@ -80,7 +80,7 @@ def fi_ph(english):
 UI = {
     "en": {
         "nav_pro": "SanapsisPro", "nav_plus": "Sanapsis+", "nav_support": "Support",
-        "nav_blog": "Blog", "nav_about": "About", "menu": "Open menu", "skip": "Skip to content",
+        "nav_blog": "Blog", "nav_about": "About us", "menu": "Open menu", "skip": "Skip to content",
         "f_bug": "Report a bug", "f_survey": "User survey", "f_privacy": "Privacy notice", "f_contact": "Contact",
         "lang_label": "Language",
     },
