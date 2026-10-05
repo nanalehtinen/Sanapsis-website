@@ -143,7 +143,7 @@ def header(lang, slug):
         cur = ' aria-current="true"' if l == lang else ""
         langs.append(f'<a href="{url(l, slug)}" lang="{l}" hreflang="{l}"{cur}>{l.upper()}</a>')
     return f"""<header class="site-header">
-      <a class="logo" href="{url(lang, '')}"><img src="ASSET/img/logo.jpg" alt="Sanapsis" width="160" height="48"></a>
+      <a class="logo" href="{url(lang, '')}"><img src="ASSET/img/logo.svg" alt="Sanapsis" width="192" height="44"></a>
       <button class="menu-toggle" type="button" aria-label="{u['menu']}" aria-expanded="false" aria-controls="main-nav">{MENU_ICON}</button>
       <nav id="main-nav" class="main-nav" aria-label="Main">
         {' '.join(nav)}
@@ -155,7 +155,7 @@ def header(lang, slug):
 def footer(lang):
     u = UI[lang]
     return f"""<footer class="site-footer">
-    <span class="brand">SANAPSIS</span>
+    <img class="brand" src="ASSET/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
     <nav class="footer-nav" aria-label="Footer">
       <a href="{url(lang, 'support/')}#report">{u['f_bug']}</a>
       <a href="{LINKS['survey']}">{u['f_survey']}</a>
