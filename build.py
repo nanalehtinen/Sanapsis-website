@@ -12,7 +12,8 @@ import sys
 
 from translations import (ABOUT, APPROVED, NANA_FI, NANA_FI_ABOUT, NANA_FI_FOOTER_BUG,
                           NANA_FI_PLUS, NANA_FI_PRO, T, EN_DRAFT, EN_DRAFT_ABOUT,
-                          EN_DRAFT_PLUS, EN_DRAFT_PRO, NANA, BLOG_NAME, NANA_EN_PLUS_P2)
+                          EN_DRAFT_PLUS, EN_DRAFT_PRO, NANA, BLOG_NAME, NANA_EN_PLUS_P2,
+                          SV, SV_PRO, SV_ABOUT)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 if "--out" in sys.argv:
@@ -68,6 +69,8 @@ def fi_ph(english):
     """Finnish/Swedish text: Nana's text, else Claude's draft (highlighted), else a placeholder."""
     if CUR_LANG == "fi" and english in NANA_FI:
         return html.escape(NANA_FI[english], quote=False)
+    if CUR_LANG == "sv" and english in SV:
+        return draft(html.escape(SV[english], quote=False), "sv")
     if english in T:
         return draft(html.escape(T[english][LANGS.index(CUR_LANG) - 1], quote=False), CUR_LANG)
     return ph(f"{CUR_LANG.upper()}: {english}")
@@ -102,6 +105,8 @@ def ui_placeholders(code, privacy_word, lang_word):
 UI["fi"] = ui_placeholders("fi", "Tietosuojaseloste", "Kieli")
 UI["fi"]["f_bug"] = NANA_FI_FOOTER_BUG
 UI["sv"] = ui_placeholders("sv", "Integritetspolicy", "Språk")
+# All Swedish stays highlighted until Nana approves it (5 Oct 2026).
+UI["sv"]["f_privacy"] = draft("Integritetspolicy", "sv")
 
 
 # All links are relative, so the site works at a domain root or in a subfolder
@@ -273,6 +278,8 @@ def pro(lang):
         paras = NANA_FI_PRO
     elif en:
         paras = [draft(p, "en") for p in EN_DRAFT_PRO]
+    elif lang == "sv":
+        paras = [draft(p, "sv") for p in SV_PRO]
     else:
         paras = [f(p) for p in paras_en]
     cats = "\n".join(
@@ -379,6 +386,11 @@ def plus(lang):
     elif lang == "en":
         t.update({k: draft(v, "en") for k, v in EN_DRAFT_PLUS.items()})
         t["p2"] = NANA_EN_PLUS_P2
+    else:
+        # Swedish: texts from the current Swedish page, highlighted until Nana approves them.
+        for k in ("lead", "p2", "p3", "get_note", "vocab", "note"):
+            t[k] = draft(t[k], "sv")
+        t["areas"] = [draft(a, "sv") for a in t["areas"]]
     area_cls = ["speaking", "listening", "reading", "writing"]
     areas = "\n".join(f'        <div class="area {c}">{a}</div>' for c, a in zip(area_cls, t["areas"]))
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/plus-hero.jpg" alt="Smiling older woman on a sofa holding a tablet" style="object-position: center 30%"></div>
@@ -441,7 +453,7 @@ def about(lang):
         if lang == "fi":
             paras = [p.format(clinic=LINKS["clinic"], blog=url(lang, "blog/")) for p in NANA_FI_ABOUT]
         else:
-            paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
+            paras = [draft(p.format(clinic=LINKS["clinic"], blog=url(lang, "blog/")), lang) for p in SV_ABOUT]
     ps = "\n".join(f"          <p>{p}</p>" for p in paras)
     body = f"""      <div class="pad page-head"><h1 class="page-title">{title}</h1></div>
       <div class="pad about-body" style="padding-bottom: 48px">

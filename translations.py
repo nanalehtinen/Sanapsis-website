@@ -254,3 +254,54 @@ EN_DRAFT_ABOUT = [
     NANA('Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to our blog <a href="{blog}">All The Things I Love About Speech Therapy With Adults</a>.'),
     "If you’re a speech-language pathologist and would like to try Sanapsis+ with your clients, get in touch and we’ll arrange a free download for you. Looking forward to hearing from you!",
 ]
+
+
+# Swedish, localized by Claude (5 Oct 2026) to match the approved Finnish and English
+# content. Written as natural Swedish (Finland-Swedish terms: talterapeut, klient).
+# All Swedish stays highlighted until Nana approves it. Key: the English key in build.py.
+SV = {
+    # Home
+    "Supporting Speech Therapy with Technology": "Teknik som stöd för talterapi",
+    "Two separate apps, each supporting a different part of the therapy journey.":
+        "Sanapsis-familjen består av två separata appar som stöder träningen i talterapi på olika sätt.",
+    "SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials.":
+        "SanapsisPro är gjord för talterapeuter. Den gör din iPad till ett flexibelt och mångsidigt bibliotek med idéer och material för terapin.",
+    "If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.":
+        "Söker du ett sätt att träna tal och kommunikation hemma? Då är Sanapsis+ gjord för dig.",
+    # SanapsisPro page
+    "iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.":
+        "SanapsisPro för iPad är ett engångsköp. Det finns inga köp i appen, varken nu eller i framtiden, och alla uppdateringar, även nya övningar, är kostnadsfria.",
+    "Download on the App Store": "Hämta i App Store",
+    "Try SanapsisLite first": "Prova SanapsisLite",
+    'Exercises such as "Is this simile true", which works especially well with high-level TBI patients.':
+        "Övningar som ”Stämmer liknelsen?”",
+    'Material to work with those who tend to "get stuck" in their speech or even comprehension.':
+        "Material för klienter som lätt ”fastnar” i sitt tal eller i sin förståelse.",
+    "Important information": "Observera",
+    "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.":
+        "SanapsisPro är avsedd att användas i terapi under handledning av en legitimerad talterapeut. Den är inte utformad för självständig användning. Söker du stöd för egen träning, ta en titt på Sanapsis+.",
+    # Sanapsis+ page
+    "Four core language areas": "Fyra övningstyper",
+    "Please note": "Observera",
+    # Support page
+    "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
+        "Berätta det för oss via formuläret nedan, så rättar vi felet så snabbt vi kan. Ange övningens namn, beskriv uppgiften (vad du ser på skärmen) och berätta vad felet eller problemet gäller. Ju mer detaljerat, desto bättre, och skärmbilder hjälper också. Tack för hjälpen!",
+    "We're always happy to hear suggestions for improvement as well!": "Vi tar alltid gärna emot förbättringsförslag!",
+    # About page
+    "About Sanapsis": "Om oss",
+}
+
+SV_PRO = [
+    "SanapsisPro är utvecklad för talterapeuter och stöder dig i att planera och genomföra neurologisk talterapi för vuxna. Appen innehåller ett brett urval av övningar, idéer för terapiplaneringen och material för att genomföra övningarna tillsammans med klienten. Övningarna är indelade i sex kategorier med sammanlagt över 35 övningstyper, och allt material finns på tre språk: svenska, finska och engelska (US).",
+    "Vill du bekanta dig med idén bakom SanapsisPro? Ladda ner SanapsisLite, som innehåller exempelövningar på alla tre språk.",
+]
+
+SV_ABOUT = [
+    "Jag heter Nana, trevligt att träffas! Jag är talterapeut med ett särskilt intresse för talterapi med vuxna, och huvuddesigner och utvecklare bakom Sanapsis-apparna.",
+    'Jag har arbetat med vuxna klienter med neurologiska diagnoser sedan 2004. Idén till Sanapsis växte fram direkt ur behoven i terapiarbetet, och den första Sanapsis-appen blev ett eget verktyg för <a href="{clinic}">Puheklinikka</a>, vårt företag som är specialiserat på neurologisk talterapi för vuxna. Vi saknade ett verktyg som gör det lättare att planera och genomföra terapi, med mångsidiga idéer och arbetssätt och snabb tillgång till material som speglar klienternas egen vardag och livsmiljö. Lika viktigt var att verktyget ger utrymme för flexibla mål och stöder ett meningsfullt samspel mellan terapeut och klient.',
+    "Efter många försök och utvecklingsfaser började <strong>SanapsisPro</strong> så småningom likna det verktyg vi hade strävat efter: ett tydligt och mångsidigt stöd för flexibel och interaktiv terapi. Vi lade till detaljerade instruktioner och massor av idéer för olika sätt att använda övningarna, och sedan var det dags att dela verktyget med kolleger. Den första versionen av SanapsisPro kom ut i App Store 2012. År 2021 lanserade vi <strong>Sanapsis+</strong>, en app för klienternas egen träning, som ett komplement till SanapsisPro.",
+    "En stor del av utvecklingsarbetet har vi gjort tillsammans med våra fantastiska klienter. Om du tittar noga kan du till och med känna igen några ansikten från Puheklinikka i materialet. Det är det bästa beviset på att materialet är utformat, utvecklat och testat för verklighetsnära och aktiv talterapi!",
+    "Utvecklingen av Sanapsis-apparna fortsätter, och vi hör alltid gärna dina idéer, erfarenheter och förbättringsförslag. Skicka oss ris och ros via knappen nedan. Vi blir också glada för ett kort hej!",
+    'Vill du läsa mer om mina tankar kring talterapi med vuxna och teknikens roll i rehabiliteringen? Ta en titt på min blogg <a href="{blog}">All The Things I Love About Speech Therapy With Adults</a> (endast på engelska).',
+    "Är du talterapeut och vill prova Sanapsis+ med dina klienter? Hör av dig, så ordnar vi så att du kan ladda ner appen gratis. Vi ser fram emot att höra från dig!",
+]
