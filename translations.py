@@ -220,6 +220,16 @@ EN_DRAFT = {
         "Please let us know using the form below, and we’ll fix it as quickly as we can. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better, and screenshots help too. Thank you for your help!",
 }
 
+class NANA(str):
+    """Text written by Nana: shown without highlight."""
+
+
+# Blog name (Nana, 5 Oct 2026), shown under the Blog heading.
+BLOG_NAME = "All The Things I Love About Speech Therapy With Adults"
+
+# Sanapsis+ second paragraph, English, written by Nana (5 Oct 2026).
+NANA_EN_PLUS_P2 = "With Sanapsis+, you can strengthen word-level communication in four areas: speaking, listening, reading, and writing."
+
 EN_DRAFT_PRO = [
     "SanapsisPro is designed for speech-language pathologists. It supports you in planning and delivering adult neurological speech therapy, with a wide range of exercises, ideas for planning sessions, and materials for working through the exercises with your client. Over 35 exercise types are grouped into six categories, and all materials are available in three languages: English (US), Finnish, and Swedish.",
     "To get a feel for how SanapsisPro works, download SanapsisLite, which includes sample exercises in all three languages.",
@@ -227,8 +237,7 @@ EN_DRAFT_PRO = [
 
 EN_DRAFT_PLUS = dict(
     lead="Sanapsis+ is designed for people with speech and communication difficulties due to neurological conditions, such as aphasia, stroke, traumatic brain injury, or progressive neurological diseases.",
-    p2="With Sanapsis+, you can activate and strengthen word-level communication in four areas: speaking, listening, reading, and writing.",
-    p3="Alongside the exercises, the app offers ideas and tips for practicing speech and language in everyday life, on your own or with a loved one. The tips draw on ordinary situations and your surroundings, because small breakthroughs in daily life go a long way!",
+        p3="Alongside the exercises, the app offers ideas and tips for practicing speech and language in everyday life, on your own or with a loved one. The tips draw on ordinary situations and your surroundings, because small breakthroughs in daily life go a long way!",
     get_note="Sanapsis+ is easy to use, and you can start practicing in just a few taps!",
     areas_title="Four exercise types",
     vocab="All Sanapsis+ exercises are built around familiar, everyday words. You can choose from these categories: Home, Objects, Food and Drink, Clothes, Surroundings, Travel, Recreation, and Verbs. All exercises and materials are available in English, Finnish, and Swedish.",
@@ -238,9 +247,9 @@ EN_DRAFT_PLUS = dict(
 EN_DRAFT_ABOUT = [
     "I’m Nana, lovely to meet you! I’m a speech-language pathologist with a special passion for working with adults, and the lead designer and developer of the Sanapsis apps.",
     'I’ve worked with adults with neurological conditions since 2004. The idea for Sanapsis came straight out of everyday therapy work: the first Sanapsis app was built as an in-house tool for <a href="{clinic}">Puheklinikka</a>, our practice specializing in adult neurological speech therapy. We wanted a tool that would make planning and delivering therapy easier, with plenty of ideas and ways of working, and quick access to materials that reflect our clients’ own daily lives and surroundings. Just as importantly, it had to allow flexible goal setting and support meaningful interaction between therapist and client.',
-    "After many rounds of testing and development, <strong>SanapsisPro</strong> gradually became the tool we had been aiming for: clear, versatile support for flexible, interactive therapy. We added detailed instructions and lots of ideas for different ways to use the exercises, and then it was ready to share with colleagues. The first version of SanapsisPro was released on the App Store in 2012.",
-    "In 2021, we added <strong>Sanapsis+</strong> to the family, an app designed for clients to practice independently.",
+    "After many rounds of testing and development, <strong>SanapsisPro</strong> gradually became the tool we had been aiming for: clear, versatile support for flexible, interactive therapy. We added detailed instructions and lots of ideas for different ways to use the exercises, and then it was ready to share with colleagues. The first version of SanapsisPro was released on the App Store in 2012. In 2021, we added <strong>Sanapsis+</strong> to the family, an app designed for clients to practice independently.",
     "Much of the development of the Sanapsis apps has been done together with our wonderful clients. If you look closely, you may even spot a few familiar faces from Puheklinikka in the materials. That’s the best proof we can offer that the materials were designed, developed, and tested for real-life, active speech therapy!",
-    "We’re still developing the Sanapsis apps, and we always love to hear your ideas, experiences, and suggestions. Send us your feedback, good or bad, using the button below.",
-    "If you’re a speech-language pathologist and would like to try Sanapsis+ with your clients, get in touch and we’ll arrange a free download for you.",
+    "The work to develop the Sanapsis apps is very much ongoing and we love to hear your ideas, experiences, and suggestions. Send us your feedback, good or bad, using the button below. We also love a note just saying Hi!",
+    NANA('Want to know more about our approach to adult speech therapy and the future of technology in rehabilitation? Head over to <a href="{blog}">our blog</a>, where I share thoughts on All The Things I Love About Speech Therapy With Adults.'),
+    "If you’re a speech-language pathologist and would like to try Sanapsis+ with your clients, get in touch and we’ll arrange a free download for you. Looking forward to hearing from you!",
 ]

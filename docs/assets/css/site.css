@@ -229,6 +229,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 
 /* Blog */
 .blog-head { padding-top: 32px; padding-bottom: 8px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.blog-name { margin: 0; font-family: var(--heading-font); font-size: 20px; color: var(--muted); }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px; }
 .chip { text-decoration: none; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); }
 .chip.active { background: var(--link); color: #fff; border-color: var(--link); }

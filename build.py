@@ -12,7 +12,7 @@ import sys
 
 from translations import (ABOUT, APPROVED, NANA_FI, NANA_FI_ABOUT, NANA_FI_FOOTER_BUG,
                           NANA_FI_PLUS, NANA_FI_PRO, T, EN_DRAFT, EN_DRAFT_ABOUT,
-                          EN_DRAFT_PLUS, EN_DRAFT_PRO)
+                          EN_DRAFT_PLUS, EN_DRAFT_PRO, NANA, BLOG_NAME, NANA_EN_PLUS_P2)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 if "--out" in sys.argv:
@@ -378,6 +378,7 @@ def plus(lang):
         t.update(NANA_FI_PLUS)
     elif lang == "en":
         t.update({k: draft(v, "en") for k, v in EN_DRAFT_PLUS.items()})
+        t["p2"] = NANA_EN_PLUS_P2
     area_cls = ["speaking", "listening", "reading", "writing"]
     areas = "\n".join(f'        <div class="area {c}">{a}</div>' for c, a in zip(area_cls, t["areas"]))
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/plus-hero.jpg" alt="Smiling older woman on a sofa holding a tablet" style="object-position: center 30%"></div>
@@ -433,7 +434,8 @@ def about(lang):
     ]
     if lang == "en":
         title, hi, button = "About Sanapsis", "Hi there.", "Get in touch"
-        paras = [draft(p.format(clinic=LINKS["clinic"]), "en") for p in EN_DRAFT_ABOUT]
+        fill = lambda p: p.format(clinic=LINKS["clinic"], blog=url(lang, "blog/"))
+        paras = [fill(p) if isinstance(p, NANA) else draft(fill(p), "en") for p in EN_DRAFT_ABOUT]
     else:
         title, hi, button = fi_ph("About Sanapsis"), fi_ph("Hi there."), fi_ph("Get in touch")
         if lang == "fi":
@@ -514,7 +516,10 @@ def blog(lang):
         </a>""")
     posts = "\n".join(rows)
     body = f"""      <div class="pad blog-head" lang="en">
-        <h1 class="page-title">{f('Blog')}</h1>
+        <div class="stack">
+          <h1 class="page-title">{f('Blog')}</h1>
+          <p class="blog-name">{BLOG_NAME}</p>
+        </div>
         <div class="chips">
           <a class="chip active" href="#">{f('All')}</a>
           <a class="chip pro" href="#">SanapsisPro</a>
