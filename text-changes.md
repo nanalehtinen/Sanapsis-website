@@ -8,7 +8,7 @@ Your Finnish texts for the SanapsisPro, Sanapsis+, Support and About pages are u
 - Footer link: "Raportoi bugi" with a capital R (your note "ILMOITA VIRHEESTÄ -> raportoi bugi"). The Support page heading stays "Ilmoita virheestä".
 - About: "Puheklinikan" links to puheklinikka.net, like the English page does.
 - SanapsisPro intro: your first paragraph is the large lead text; the SanapsisLite paragraph is below it.
-- Kept as you wrote them, please check: "Huomaathan!" (Pro, with !) vs "Huomaathan" (Sanapsis+, without); the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?).
+- Kept as you wrote them, please check: the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?).
 - SanapsisPro note box (FI): "SanapsisPro on tarkoitettu…" instead of "Sanapsis on tarkoitettu…" (Nana, 5 Oct).
 - SanapsisPro is written as one word everywhere, also in the menu (Nana, 5 Oct).
 - SanapsisLite is written as one word everywhere (Nana, 5 Oct), also in English ("Try SanapsisLite first", form menu).

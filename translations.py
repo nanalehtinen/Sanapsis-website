@@ -169,7 +169,7 @@ NANA_FI = {
     "We're always happy to hear suggestions for improvement as well!": "Otamme aina mielellämme vastaan kehitysehdotuksia!",
     # Sanapsis+ page
     "Four core language areas": "Neljä tehtävätyyppiä",
-    "Please note": "Huomaathan",
+    "Please note": "Huomaathan!",
     # About page
     "About Sanapsis": "Tietoa meistä",
     "Hi there.": "Hei!",
