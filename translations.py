@@ -158,6 +158,8 @@ NANA_FI = {
     "Supporting Speech Therapy with Technology": "Teknologia puheterapian tukena",
     "Two separate apps, each supporting a different part of the therapy journey.":
         "Sanapsis-perheeseen kuuluu kaksi erillistä sovellusta, jotka tukevat puheterapeuttista harjoittelua eri tavoilla.",
+    "Learn more about Sanapsis Pro": "Lue lisää sovelluksesta SanapsisPro",
+    "Learn more about Sanapsis+": "Lue lisää sovelluksesta Sanapsis+",
     # Support page
     "Report a bug": "Ilmoita virheestä",
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
