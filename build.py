@@ -11,7 +11,8 @@ import os
 import sys
 
 from translations import (ABOUT, APPROVED, NANA_FI, NANA_FI_ABOUT, NANA_FI_FOOTER_BUG,
-                          NANA_FI_PLUS, NANA_FI_PRO, T)
+                          NANA_FI_PLUS, NANA_FI_PRO, T, EN_DRAFT, EN_DRAFT_ABOUT,
+                          EN_DRAFT_PLUS, EN_DRAFT_PRO)
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs")
 if "--out" in sys.argv:
@@ -54,6 +55,13 @@ def draft(text, lang):
     if APPROVED:
         return text
     return f'<span class="ph" lang="{lang}">{text}</span>'
+
+
+def en_t(english):
+    """English text: Claude's new draft (highlighted) if there is one, else the current text."""
+    if english in EN_DRAFT:
+        return draft(html.escape(EN_DRAFT[english], quote=False), "en")
+    return english
 
 
 def fi_ph(english):
@@ -99,6 +107,9 @@ UI["sv"] = ui_placeholders("sv", "Integritetspolicy", "Språk")
 # All links are relative, so the site works at a domain root or in a subfolder
 # (for example a GitHub Pages project address). BASE is set per page while building.
 BASE = ""
+# Changes whenever site.css changes, so browsers fetch the new stylesheet instead of a cached one.
+import hashlib
+CSS_VERSION = hashlib.sha1(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "assets", "css", "site.css"), "rb").read()).hexdigest()[:8]
 # --preview adds index.html to page links, for hosts that do not open folder indexes.
 PREVIEW = "--preview" in sys.argv
 
@@ -169,7 +180,7 @@ def page(lang, slug, title, description, body):
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="ASSET/css/site.css">
+  <link rel="stylesheet" href="ASSET/css/site.css?v={CSS_VERSION}">
   <script src="ASSET/js/menu.js" defer></script>
   <script src="ASSET/js/video.js" defer></script>
 </head>
@@ -193,7 +204,7 @@ def home(lang):
     t = {
         "en": dict(
             h1="Supporting Speech Therapy with Technology",
-            intro="Two separate apps, each supporting a different part of the therapy journey.",
+            intro=en_t("Two separate apps, each supporting a different part of the therapy journey."),
             pro_eyebrow="For speech-language pathologists",
             pro_desc="SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials.",
             pro_more="Learn more about SanapsisPro",
@@ -257,8 +268,13 @@ def pro(lang):
         "It offers therapy materials across all core language areas, providing clinicians with structured examples and ideas to support the therapy process. SanapsisPro includes over 35 types of exercises organized into six categories.",
         "All materials have been specifically developed and tested for adult speech and language therapy. SanapsisPro includes all three languages, English (US), Finnish, and Swedish, in the same download.",
     ]
-    f = (lambda s: s) if en else fi_ph
-    paras = NANA_FI_PRO if lang == "fi" else [f(p) for p in paras_en]
+    f = en_t if en else fi_ph
+    if lang == "fi":
+        paras = NANA_FI_PRO
+    elif en:
+        paras = [draft(p, "en") for p in EN_DRAFT_PRO]
+    else:
+        paras = [f(p) for p in paras_en]
     cats = "\n".join(
         f'        <div class="tile"><div class="video-slot">{ph("VIDEO")}</div><h3>{f(n)}</h3><p>{f(d)}</p></div>'
         for n, d in PRO_CATEGORIES_EN)
@@ -360,6 +376,8 @@ def plus(lang):
         )
     if lang == "fi":
         t.update(NANA_FI_PLUS)
+    elif lang == "en":
+        t.update({k: draft(v, "en") for k, v in EN_DRAFT_PLUS.items()})
     area_cls = ["speaking", "listening", "reading", "writing"]
     areas = "\n".join(f'        <div class="area {c}">{a}</div>' for c, a in zip(area_cls, t["areas"]))
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/plus-hero.jpg" alt="Smiling older woman on a sofa holding a tablet" style="object-position: center 30%"></div>
@@ -415,7 +433,7 @@ def about(lang):
     ]
     if lang == "en":
         title, hi, button = "About Sanapsis", "Hi there.", "Get in touch"
-        paras = paras_en
+        paras = [draft(p.format(clinic=LINKS["clinic"]), "en") for p in EN_DRAFT_ABOUT]
     else:
         title, hi, button = fi_ph("About Sanapsis"), fi_ph("Hi there."), fi_ph("Get in touch")
         if lang == "fi":
@@ -439,7 +457,7 @@ def about(lang):
 
 def support(lang):
     en = lang == "en"
-    f = (lambda s: s) if en else fi_ph
+    f = en_t if en else fi_ph
     faq = "\n".join(
         f'        <details><summary>{ph("QUESTION")}</summary><p>{ph("ANSWER")}</p></details>' for _ in range(3))
     # The form does not send anything yet: the form service depends on the hosting choice.
