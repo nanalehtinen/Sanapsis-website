@@ -264,10 +264,12 @@ def pro(lang):
         for n, d in PRO_CATEGORIES_EN)
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">
-        <div class="text stack">
+        <div class="intro-head stack">
           <div class="accent-line pro"></div>
           <div class="eyebrow">{f('For speech-language pathologists')}</div>
           <h1>SanapsisPro</h1>
+        </div>
+        <div class="text stack">
           <p class="lead">{paras[0]}</p>
           <div class="body-text stack">{"".join(f"<p>{p}</p>" for p in paras[1:])}</div>
           <div class="get-box">
@@ -422,9 +424,9 @@ def about(lang):
             paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
     ps = "\n".join(f"          <p>{p}</p>" for p in paras)
     body = f"""      <div class="pad page-head"><h1 class="page-title">{title}</h1></div>
-      <div class="pad two-col" style="padding-bottom: 48px">
+      <div class="pad two-col about-cols" style="padding-bottom: 48px">
+        <h2 class="about-hi" style="font-weight: 600; font-size: 24px">{hi}</h2>
         <div class="main body-text stack-lg">
-          <h2 style="font-weight: 600; font-size: 24px">{hi}</h2>
 {ps}
         </div>
         <div class="side">
