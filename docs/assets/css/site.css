@@ -198,17 +198,15 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .two-col { display: flex; flex-wrap: wrap; gap: 56px; padding-top: 40px; padding-bottom: 56px; align-items: flex-start; }
 .two-col .main { flex: 1 1 520px; }
 .two-col .side { flex: 1 1 300px; display: flex; flex-direction: column; gap: 20px; }
-/* About: the photo starts level with the first paragraph, not the greeting. */
-.about-cols { row-gap: 18px; }
-.about-cols .about-hi { flex: 1 1 100%; }
-.about-cols .side { margin-top: 18px; }
-@media (min-width: 900px) {
-  .about-cols { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); column-gap: 56px; align-items: start; }
-  .about-cols .about-hi { grid-column: 1; grid-row: 1; }
-  .about-cols .main { grid-column: 1; grid-row: 2; }
-  .about-cols .side { grid-column: 2; grid-row: 2; margin-top: 0; }
+/* About: the photo floats right of the text, starting at the first paragraph; text wraps under it. */
+.about-body { padding-top: 40px; }
+.about-hi { margin-bottom: 18px; }
+.about-text p { margin: 0 0 18px; }
+.about-text::after { content: ""; display: block; clear: both; }
+.about-photo { float: right; width: 40%; height: 420px; object-fit: cover; border-radius: 8px; margin: 6px 0 18px 48px; }
+@media (max-width: 760px) {
+  .about-photo { float: none; display: block; width: 100%; height: 260px; margin: 0 0 20px; }
 }
-.about-photo { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; }
 .cta-row { padding-bottom: 64px; display: flex; }
 
 .card { border: 1px solid var(--line); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 10px; }

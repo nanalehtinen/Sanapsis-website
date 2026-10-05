@@ -424,13 +424,11 @@ def about(lang):
             paras = [draft(p.format(clinic=LINKS["clinic"]), lang) for p in ABOUT[lang]]
     ps = "\n".join(f"          <p>{p}</p>" for p in paras)
     body = f"""      <div class="pad page-head"><h1 class="page-title">{title}</h1></div>
-      <div class="pad two-col about-cols" style="padding-bottom: 48px">
+      <div class="pad about-body" style="padding-bottom: 48px">
         <h2 class="about-hi" style="font-weight: 600; font-size: 24px">{hi}</h2>
-        <div class="main body-text stack-lg">
-{ps}
-        </div>
-        <div class="side">
+        <div class="about-text body-text">
           <img class="about-photo" src="ASSET/img/about.jpg" alt="Two speech-language pathologists at a table">
+{ps}
         </div>
       </div>
       <div class="pad cta-row"><a class="button pro" href="{url(lang, 'support/')}#contact">{button}</a></div>"""

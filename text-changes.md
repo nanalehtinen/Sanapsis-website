@@ -9,6 +9,7 @@ Your Finnish texts for the SanapsisPro, Sanapsis+, Support and About pages are u
 - About: "Puheklinikan" links to puheklinikka.net, like the English page does.
 - SanapsisPro intro: your first paragraph is the large lead text; the SanapsisLite paragraph is below it.
 - Kept as you wrote them, please check: "Huomaathan!" (Pro, with !) vs "Huomaathan" (Sanapsis+, without); the semantics tile ends without a full stop; "Kaikki materiaalit on käytettävissä" and "Harjoitukset ja materiaalit on käytettävissä" (ovat?); "SanapsisLite sovelluksen", "Sanapsis-Lite sovellusta", "Sanapsis+ sovellukseen", "Sanapsis+ sovelluksen" (hyphen, e.g. "Sanapsis+-sovellukseen"?).
+- SanapsisPro note box (FI): "SanapsisPro on tarkoitettu…" instead of "Sanapsis on tarkoitettu…" (Nana, 5 Oct).
 - SanapsisPro is written as one word everywhere, also in the menu (Nana, 5 Oct).
 - SanapsisLite is written as one word everywhere (Nana, 5 Oct), also in English ("Try SanapsisLite first", form menu).
 - About, paragraph 2: your new text (5 Oct, second version). Two double spaces became single spaces. Kept as you wrote it, please check: "alunperin" (usually written "alun perin"). It also replaces the start of the old third paragraph ("Sanapsis syntyi alun perin omaksi työkaluksemme. Halusimme terapiatyön tueksi välineen"), so the old paragraphs 2 and 3 are now one paragraph ending "...terapeutin ja asiakkaan välillä."
