@@ -154,6 +154,10 @@ NANA_FI = {
     "Important information": "Huomaathan!",
     "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.":
         "Sanapsis on tarkoitettu käytettäväksi terapiassa laillistetun puheterapeutin ohjauksessa. Sitä ei ole suunniteltu itsenäiseen käyttöön. Jos etsit tukea omatoimiseen harjoitteluun, tutustu Sanapsis+ sovellukseen.",
+    # Home page
+    "Supporting Speech Therapy with Technology": "Teknologia puheterapian tukena",
+    "Two separate apps, each supporting a different part of the therapy journey.":
+        "Sanapsis-perheeseen kuuluu kaksi erillistä sovellusta, jotka tukevat puheterapeuttista harjoittelua eri tavoilla.",
     # Support page
     "Report a bug": "Ilmoita virheestä",
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
