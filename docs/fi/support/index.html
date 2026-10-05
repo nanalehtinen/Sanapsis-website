@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/site.css?v=12855d33">
+  <link rel="stylesheet" href="../../assets/css/site.css?v=b032ead5">
   <script src="../../assets/js/menu.js" defer></script>
   <script src="../../assets/js/video.js" defer></script>
 </head>
@@ -48,22 +48,31 @@
           <div class="card"><h2>Tietosuoja</h2><a href="../../fi/privacy/">Tietosuojaseloste</a></div>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq" id="faq">
         <h2>Usein kysyttyä</h2>
-        <details><summary><span class="ph">[QUESTION]</span></summary><p><span class="ph">[ANSWER]</span></p></details>
-        <details><summary><span class="ph">[QUESTION]</span></summary><p><span class="ph">[ANSWER]</span></p></details>
-        <details><summary><span class="ph">[QUESTION]</span></summary><p><span class="ph">[ANSWER]</span></p></details>
+        <div class="chat-card" aria-label="Chat (placeholder)">
+          <div class="chat-head"><span class="chat-avatar"><img src="../../assets/img/icon.svg" alt="" width="22" height="20"></span>Sanapsis</div>
+          <div class="chat-body">
+            <p class="bubble"><span class="ph" lang="fi">Hei! Kysy minulta mitä tahansa SanapsisProsta tai Sanapsis+:sta.</span></p>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="Kirjoita kysymyksesi…" disabled aria-label="Kirjoita kysymyksesi…">
+            <button type="button" disabled aria-label="Lähetä"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <p class="chat-note"><span class="ph">[stand.chat chat box goes here]</span></p>
       </div>
     </main>
   </div>
   <footer class="site-footer">
-    <img class="brand" src="../../assets/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
     <nav class="footer-nav" aria-label="Footer">
       <a href="../../fi/support/#report">Raportoi bugi</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdIjSR9CeAn4M-SU6pFMydha4Se2FIc-rOR6Kv4jv2Wvd8CyQ/viewform?usp=sharing">Käyttäjäkysely</a>
       <a href="../../fi/privacy/">Tietosuojaseloste</a>
       <a href="../../fi/support/#contact">Yhteystiedot</a>
     </nav>
+    <!-- Logo on the right: it will become the stand.chat chat icon (Nana, 5 Oct 2026). -->
+    <img class="brand" src="../../assets/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
   </footer>
 </body>
 </html>

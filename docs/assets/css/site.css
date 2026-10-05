@@ -223,6 +223,16 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 
 .faq { margin: 0 56px 64px; border-top: 1px solid var(--line); padding-top: 40px; display: flex; flex-direction: column; gap: 16px; }
 .faq h2 { font-weight: 600; font-size: 26px; }
+/* FAQ chat card: mock-up of the stand.chat box until it is configured. */
+.chat-card { max-width: 560px; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); }
+.chat-head { display: flex; align-items: center; gap: 12px; background: var(--navy); color: #fff; padding: 14px 18px; font-family: var(--heading-font); font-weight: 600; font-size: 16px; }
+.chat-avatar { width: 34px; height: 34px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center; }
+.chat-body { padding: 22px 18px; background: #fafafa; min-height: 120px; }
+.bubble { margin: 0; max-width: 85%; background: #fff; border: 1px solid var(--line); border-radius: 4px 14px 14px 14px; padding: 12px 14px; font-size: 16px; line-height: 1.5; }
+.chat-input { display: flex; gap: 10px; padding: 12px; border-top: 1px solid var(--line); background: #fff; }
+.chat-input input { flex: 1; min-width: 0; font: inherit; font-size: 15px; padding: 12px 14px; border: 1px solid #ccc; border-radius: 999px; background: #fff; }
+.chat-input button { flex: 0 0 44px; height: 44px; border: none; border-radius: 50%; background: var(--link); display: flex; align-items: center; justify-content: center; }
+.chat-note { margin: 0; font-size: 13px; }
 .faq details { border-bottom: 1px solid var(--line); padding: 16px 0; }
 .faq summary { font-size: 17px; font-weight: 600; cursor: pointer; }
 .faq details p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; }
@@ -302,6 +312,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
   .site-footer { flex-direction: column; align-items: flex-start; padding: 28px 8px 32px; }
   .footer-nav { flex-direction: column; gap: 0; }
   .footer-nav a { padding: 10px 0; }
+  .site-footer .brand { align-self: flex-end; }
 }
 
 /* Video that starts as a still image and loads the Vimeo player when tapped */

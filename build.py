@@ -160,13 +160,14 @@ def header(lang, slug):
 def footer(lang):
     u = UI[lang]
     return f"""<footer class="site-footer">
-    <img class="brand" src="ASSET/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
     <nav class="footer-nav" aria-label="Footer">
       <a href="{url(lang, 'support/')}#report">{u['f_bug']}</a>
       <a href="{LINKS['survey']}">{u['f_survey']}</a>
       <a href="{url(lang, 'privacy/')}">{u['f_privacy']}</a>
       <a href="{url(lang, 'support/')}#contact">{u['f_contact']}</a>
     </nav>
+    <!-- Logo on the right: it will become the stand.chat chat icon (Nana, 5 Oct 2026). -->
+    <img class="brand" src="ASSET/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
   </footer>"""
 
 
@@ -472,8 +473,13 @@ def about(lang):
 def support(lang):
     en = lang == "en"
     f = en_t if en else fi_ph
-    faq = "\n".join(
-        f'        <details><summary>{ph("QUESTION")}</summary><p>{ph("ANSWER")}</p></details>' for _ in range(3))
+    # FAQ = a stand.chat chat box (Nana, 5 Oct 2026). This card is a mock-up until it is configured.
+    # Its sample texts are Claude's and stay highlighted in every language until Nana approves them.
+    chat = {
+        "en": ("Hi! Ask me anything about SanapsisPro or Sanapsis+.", "Type your question…", "Send"),
+        "fi": ("Hei! Kysy minulta mitä tahansa SanapsisProsta tai Sanapsis+:sta.", "Kirjoita kysymyksesi…", "Lähetä"),
+        "sv": ("Hej! Fråga mig vad du vill om SanapsisPro eller Sanapsis+.", "Skriv din fråga…", "Skicka"),
+    }[lang]
     # The form does not send anything yet: the form service depends on the hosting choice.
     body = f"""      <div class="pad page-head"><h1 class="page-title">{f('Support')}</h1></div>
       <div class="pad two-col">
@@ -495,9 +501,19 @@ def support(lang):
           <div class="card"><h2>{f('Privacy')}</h2><a href="{url(lang, 'privacy/')}">{UI[lang]['f_privacy']}</a></div>
         </div>
       </div>
-      <div class="faq">
+      <div class="faq" id="faq">
         <h2>{f('Frequently asked questions')}</h2>
-{faq}
+        <div class="chat-card" aria-label="Chat (placeholder)">
+          <div class="chat-head"><span class="chat-avatar"><img src="ASSET/img/icon.svg" alt="" width="22" height="20"></span>Sanapsis</div>
+          <div class="chat-body">
+            <p class="bubble"><span class="ph" lang="{lang}">{chat[0]}</span></p>
+          </div>
+          <div class="chat-input">
+            <input type="text" placeholder="{chat[1]}" disabled aria-label="{chat[1]}">
+            <button type="button" disabled aria-label="{chat[2]}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <p class="chat-note">{ph("stand.chat chat box goes here")}</p>
       </div>"""
     return page(lang, "support/", "Support | Sanapsis", "Report a bug or contact the Sanapsis team.", body)
 
