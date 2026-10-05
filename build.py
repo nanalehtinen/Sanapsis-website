@@ -445,7 +445,7 @@ def about(lang):
         "We love to hear from colleagues. If you'd like to test Sanapsis+ with your patients, just let us know.",
     ]
     if lang == "en":
-        title, hi, button = "About Sanapsis", "Hi there.", "Get in touch"
+        title, hi, button = "About us", "Hi there.", "Get in touch"
         fill = lambda p: p.format(clinic=LINKS["clinic"], blog=url(lang, "blog/"))
         paras = [fill(p) if isinstance(p, NANA) else draft(fill(p), "en") for p in EN_DRAFT_ABOUT]
     else:
