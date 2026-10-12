@@ -294,9 +294,14 @@ def pro(lang):
     else:
         paras = [f(p) for p in paras_en]
     play_icon = '<span class="play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#ffffff"/></svg></span>'
+    # The videos exist in English only (Nana, 12 Oct 2026): FI and SV keep an empty box in their place.
+    def cat_media(n):
+        if not en:
+            return '<div class="video-box" aria-hidden="true"></div>'
+        return (f'<button class="video-poster cat-video" type="button" data-vimeo="{PRO_VIDEOS[n]}" data-ratio="4 / 3" '
+                f'aria-label="Play video: {html.escape(n)}">{play_icon}</button>')
     cats = "\n".join(
-        f'        <div class="tile"><button class="video-poster cat-video" type="button" data-vimeo="{PRO_VIDEOS[n]}" data-ratio="4 / 3" '
-        f'aria-label="Play video: {html.escape(n)}">{play_icon}</button><h3>{f(n)}</h3><p>{f(d)}</p></div>'
+        f'        <div class="tile">{cat_media(n)}<h3>{f(n)}</h3><p>{f(d)}</p></div>'
         for n, d in PRO_CATEGORIES_EN)
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">
