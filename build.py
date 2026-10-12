@@ -479,12 +479,10 @@ def support(lang):
         "sv": ("Hej! Fråga mig vad du vill om SanapsisPro eller Sanapsis+.", "Skriv din fråga…", "Skicka"),
     }[lang]
     # Bug reports go by email (Nana, 12 Oct 2026): GitHub Pages can't receive forms, and email lets people attach screenshots.
-    # The button label and subject are Claude's wording, highlighted until Nana approves them.
-    mail_label, mail_subject = {
-        "en": ("Email us", "Bug report"),
-        "fi": ("Lähetä sähköpostia", "Virheilmoitus"),
-        "sv": ("Skicka e-post", "Felrapport"),
-    }[lang]
+    # The email subject is Claude's wording.
+    mail_subject = {"en": "Bug report", "fi": "Virheilmoitus", "sv": "Felrapport"}[lang]
+    # Button label "Report a bug" (Nana, 12 Oct 2026); Finnish uses her footer wording.
+    mail_label = {"en": "Report a bug", "fi": NANA_FI_FOOTER_BUG, "sv": draft("Rapportera ett fel", "sv")}[lang]
     # Claude changed "using the form below" to the email wording; highlighted until Nana approves.
     bug_text = f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')
     for phrase in ("by email using the button below", "sähköpostilla alla olevan painikkeen kautta", "via e-post med knappen nedan"):
@@ -510,7 +508,7 @@ def support(lang):
           <div class="accent-line"></div>
           <h2>{f('Report a bug')}</h2>
           <p class="body-text" style="margin: 0"><strong>{f('Found a bug in SanapsisPro or Sanapsis+?')}</strong> {bug_text}</p>
-          <a class="button" href="{mailto}"><span class="ph" lang="{lang}">{mail_label}</span></a>
+          <a class="button" href="{mailto}">{mail_label}</a>
           <p class="body-text" style="margin: 0">{f("We're always happy to hear suggestions for improvement as well!")}</p>
         </div>
         <div class="side">
