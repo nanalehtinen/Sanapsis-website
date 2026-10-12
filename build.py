@@ -7,6 +7,8 @@ Cloudflare Pages as is. Texts live in the PAGES dictionaries below.
 Text wrapped in ph() is a placeholder that still needs writing.
 """
 import html
+import re
+import json
 import urllib.parse
 import os
 import sys
@@ -141,7 +143,7 @@ def header(lang, slug):
              ("support/", u["nav_support"], ""), ("blog/", u["nav_blog"], ""), ("about/", u["nav_about"], "")]
     nav = []
     for s, label, cls in items:
-        cur = ' aria-current="page"' if s == slug else ""
+        cur = ' aria-current="page"' if s == slug or (s == "blog/" and slug.startswith("blog/")) else ""
         c = f' class="{cls}"' if cls else ""
         nav.append(f'<a href="{url(lang, s)}"{c}{cur}>{label}</a>')
     langs = []
@@ -522,54 +524,125 @@ def support(lang):
 
 # ---------------------------------------------------------------- Blog
 
-# The four latest posts on the old blog (sanapsis.com/blog, checked 12 Oct 2026), newest first.
-# Excerpts are the opening lines of Nana's posts; images are each post's first screenshot.
-BLOG_POSTS = [
-    ("18 September 2026", "SanapsisPro", "SanapsisLite",
-     "SanapsisLite has had a refresh! The free demo version of SanapsisPro now mirrors the full app with a new look.",
-     "sanapsislite.jpg", "SanapsisLite main menu with the six exercise categories"),
-    ("9 August 2026", "SanapsisPro", "Let's add some color!",
-     "Next up in the Speech Production category is Descriptive Sentence.",
-     "add-some-color.jpg", "Speech Production exercise list in SanapsisPro, with Descriptive Sentence highlighted"),
-    ("15 July 2026", "SanapsisPro", "To the point!",
-     "Next up in the Speech Production category is Precise Sentence. This exercise is all about precise, concise expression.",
-     "to-the-point.jpg", "Speech Production exercise list in SanapsisPro, with Precise Sentence circled"),
-    ("21 June 2026", "SanapsisPro", "Summer season, fresh look",
-     "In Finland, there is an expression about shedding your “winter fur” when you take the first swim of the summer.",
-     "summer-fresh-look.jpg", "The new SanapsisPro main menu with the six exercise categories"),
-]
+# All posts from the old blog (www.sanapsis.com/blog), imported 12 Oct 2026 by tools/import_blog.py.
+# Post text is Nana's, unchanged; the category (filter chips) is Claude's judgement, the old blog had none.
+BLOG_POSTS = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "blog_posts.json"), encoding="utf-8"))
+BLOG_PER_PAGE = 10
+BLOG_CATS = [("", "All", ""), ("sanapsispro/", "SanapsisPro", "pro"), ("sanapsis-plus/", "Sanapsis+", "plus")]
+MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+          "October", "November", "December"]
 
 
-def blog(lang):
-    # Nana (5 Oct 2026): the blog is English only, also on the Finnish and Swedish sites.
-    f = lambda s: s
-    rows = []
-    for date, tag, title, excerpt, img, alt in BLOG_POSTS:
-        rows.append(f"""        <a class="post" href="#">
-          <img class="thumb" src="ASSET/img/blog/{img}" alt="{html.escape(alt)}" loading="lazy" width="800" height="582">
-          <span class="info">
-            <span class="meta">{date} · <span class="tag">{tag}</span></span>
-            <span class="title">{html.escape(title)}</span>
-            <span class="excerpt">{html.escape(excerpt)}</span>
-          </span>
-        </a>""")
-    posts = "\n".join(rows)
-    body = f"""      <div class="pad blog-head" lang="en">
+def nice_date(iso):
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{d} {MONTHS[m - 1]} {y}"
+
+
+def post_tag(post):
+    if not post["category"]:
+        return ""
+    cls = "plus" if post["category"] == "Sanapsis+" else "pro"
+    return f' · <span class="tag {cls}">{post["category"]}</span>'
+
+
+def blog_head(lang, cat):
+    chips = []
+    for c, label, cls in BLOG_CATS:
+        classes = "chip" + (" active" if c == cat else "") + (" " + cls if cls else "")
+        cur = ' aria-current="page"' if c == cat else ""
+        chips.append(f'          <a class="{classes}" href="{url(lang, "blog/" + c)}"{cur}>{label}</a>')
+    chips = "\n".join(chips)
+    return f"""      <div class="pad blog-head" lang="en">
         <div class="stack">
-          <h1 class="page-title">{f('Blog')}</h1>
+          <h1 class="page-title">Blog</h1>
           <p class="blog-name">{BLOG_NAME}</p>
         </div>
-        <div class="chips">
-          <a class="chip active" href="#">{f('All')}</a>
-          <a class="chip pro" href="#">SanapsisPro</a>
-          <a class="chip plus" href="#">Sanapsis+</a>
-        </div>
-      </div>
-      <div class="posts" lang="en">
-{posts}
-        <div class="older"><a class="text-link" href="#">{f('Older posts')}</a></div>
+        <nav class="chips" aria-label="Filter posts">
+{chips}
+        </nav>
       </div>"""
-    return page(lang, "blog/", "Blog | Sanapsis", "News and updates about the Sanapsis apps.", body)
+
+
+def blog_list(lang, cat, label, posts, n, pages):
+    """One listing page (n = 1..pages) of the posts in a category ('' = all)."""
+    base = "blog/" + cat
+    rows = []
+    for post in posts:
+        if post["lead"]:
+            thumb = f'<img class="thumb" src="ASSET/img/blog/{post["lead"]}" alt="" loading="lazy">'
+        else:
+            thumb = '<span class="thumb empty"><img src="ASSET/img/icon.svg" alt="" width="48" height="44"></span>'
+        rows.append(f"""        <a class="post" href="{url(lang, 'blog/' + post['slug'] + '/')}">
+          {thumb}
+          <span class="info">
+            <span class="meta">{nice_date(post['date'])}{post_tag(post)}</span>
+            <span class="title">{html.escape(post['title'])}</span>
+            <span class="excerpt">{html.escape(post['excerpt'])}</span>
+          </span>
+        </a>""")
+    page_url = lambda k: url(lang, base if k == 1 else f"{base}page/{k}/")
+    newer = f'<a class="text-link" href="{page_url(n - 1)}">← Newer posts</a>' if n > 1 else "<span></span>"
+    older = f'<a class="text-link" href="{page_url(n + 1)}">Older posts →</a>' if n < pages else "<span></span>"
+    pager = f'        <nav class="pager" aria-label="Pages">{newer}<span class="count">Page {n} of {pages}</span>{older}</nav>' if pages > 1 else ""
+    body = f"""{blog_head(lang, cat)}
+      <div class="posts" lang="en">
+{chr(10).join(rows)}
+{pager}
+      </div>"""
+    slug = base if n == 1 else f"{base}page/{n}/"
+    title = "Blog | Sanapsis" if not cat else f"{label} | Sanapsis Blog"
+    if n > 1:
+        title = f"Page {n} | " + title
+    return slug, page(lang, slug, title, "News and updates about the Sanapsis apps.", body)
+
+
+def blog_post(lang, i):
+    post = BLOG_POSTS[i]
+    slug = f"blog/{post['slug']}/"
+    body_html = re.sub(r'SITE/([^"]*)', lambda m: url(lang, m.group(1)), post["body"])
+    nav = []
+    if i > 0:
+        p = BLOG_POSTS[i - 1]
+        nav.append(f'<a class="newer" href="{url(lang, "blog/" + p["slug"] + "/")}"><span>Newer post</span>{html.escape(p["title"])}</a>')
+    if i < len(BLOG_POSTS) - 1:
+        p = BLOG_POSTS[i + 1]
+        nav.append(f'<a class="older" href="{url(lang, "blog/" + p["slug"] + "/")}"><span>Older post</span>{html.escape(p["title"])}</a>')
+    body = f"""      <article class="pad blog-post" lang="en">
+        <p class="back"><a class="text-link" href="{url(lang, 'blog/')}">← Blog</a></p>
+        <h1>{html.escape(post['title'])}</h1>
+        <p class="meta">{nice_date(post['date'])} · Nana Lehtinen{post_tag(post)}</p>
+        <div class="post-body">
+{body_html}
+        </div>
+        <nav class="post-nav" aria-label="More posts">{''.join(nav)}</nav>
+      </article>"""
+    return slug, page(lang, slug, f"{html.escape(post['title'])} | Sanapsis Blog", post["excerpt"], body)
+
+
+def blog_routes():
+    """Every blog page: listings (all + per category, paginated) and one page per post."""
+    routes = {}
+    for cat, label, _ in BLOG_CATS:
+        posts = [p for p in BLOG_POSTS if not cat or p["category"] == label]
+        pages = max(1, -(-len(posts) // BLOG_PER_PAGE))
+        for n in range(1, pages + 1):
+            slug = "blog/" + cat + ("" if n == 1 else f"page/{n}/")
+            chunk = posts[(n - 1) * BLOG_PER_PAGE:n * BLOG_PER_PAGE]
+            routes[slug] = lambda lang, a=(cat, label, chunk, n, pages): blog_list(lang, *a)[1]
+    for i, post in enumerate(BLOG_POSTS):
+        routes[f"blog/{post['slug']}/"] = lambda lang, i=i: blog_post(lang, i)[1]
+    return routes
+
+
+BLOG_ROUTES = blog_routes()
+
+
+def blog_slugs():
+    return list(BLOG_ROUTES)
+
+
+def blog_render(lang, slug):
+    return BLOG_ROUTES[slug](lang)
 
 
 # ---------------------------------------------------------------- Privacy
@@ -653,7 +726,7 @@ def not_found():
 
 
 BUILDERS = {"": home, "pro/": pro, "plus/": plus, "about/": about,
-            "support/": support, "blog/": blog, "privacy/": privacy}
+            "support/": support, "privacy/": privacy}
 
 
 def write(path, text):
@@ -671,9 +744,13 @@ def main():
             rel = prefix(lang) + slug
             BASE = "../" * rel.count("/")
             write(os.path.join(ROOT, rel, "index.html"), build(lang))
+        for slug in blog_slugs():
+            rel = prefix(lang) + slug
+            BASE = "../" * rel.count("/")
+            write(os.path.join(ROOT, rel, "index.html"), blog_render(lang, slug))
     BASE = ""
     write(os.path.join(ROOT, "404.html"), not_found())
-    print("Built", len(LANGS) * len(BUILDERS) + 1, "pages into", ROOT)
+    print("Built", len(LANGS) * (len(BUILDERS) + len(blog_slugs())) + 1, "pages into", ROOT)
 
 
 if __name__ == "__main__":
