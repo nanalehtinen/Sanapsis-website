@@ -225,7 +225,10 @@ EN_DRAFT = {
     "iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.":
         "SanapsisPro for iPad is a one-time purchase. There are no in-app purchases, now or in the future, and all updates, including new exercises, are free.",
     'Exercises such as "Is this simile true", which works especially well with high-level TBI patients.':
-        "Exercises such as “Is this simile true?”",
+        "Exercises such as “Is the simile true?” and “What does not belong?” with multiple difficulty levels.",
+    # Nana, 12 Oct 2026 (quote marks made curly).
+    'Material to work with those who tend to "get stuck" in their speech or even comprehension.':
+        "Material for speech therapy sessions that target the tendency to “get stuck” in speech production or even comprehension.",
     "Important information": "Please note",
     "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.":
         "SanapsisPro is intended for use in therapy under the guidance of a licensed speech-language pathologist (SLP). It is not designed for independent use. If you are looking for support for practicing on your own, take a look at Sanapsis+.",
