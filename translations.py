@@ -238,7 +238,7 @@ EN_DRAFT_PRO = [
 
 EN_DRAFT_PLUS = dict(
     lead="Sanapsis+ is designed for people with speech and communication difficulties due to neurological conditions, such as aphasia, stroke or traumatic brain injury.",
-        p3="Alongside the exercises, the app offers ideas and tips for practicing speech and language in everyday life, on your own or with a loved one. The tips draw on ordinary situations and your surroundings, because small breakthroughs in daily life go a long way!",
+        p3="The app also offers ideas and tips for practicing speech and language in everyday situations. You can work on your own or with a loved one - small breakthroughs in daily life can go a long way!",
     get_note="Sanapsis+ is easy to use, and you can start practicing in just a few taps!",
     areas_title="Four exercise types",
     vocab="All Sanapsis+ exercises are built around familiar, everyday words. You can choose from these categories: Home, Objects, Food and Drink, Clothes, Surroundings, Travel, Recreation, and Verbs. All exercises and materials are available in English, Finnish, and Swedish.",
