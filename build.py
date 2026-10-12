@@ -268,6 +268,10 @@ PRO_VIDEOS = {"Reading": "119886306", "Writing": "119887345", "Production": "119
               "Comprehension": "119886304", "Semantics": "119886307", "Perseveration": "119886307"}
 
 PRO_KEY_VIDEO = "119886303"
+# Poster stills: the Vimeo thumbnails of the same videos (fetched 12 Oct 2026, thread "Vimeo preview pictures").
+PRO_VIDEO_POSTERS = {"Reading": "reading", "Writing": "writing", "Production": "production",
+                     "Comprehension": "comprehension", "Semantics": "semantics-perseveration",
+                     "Perseveration": "semantics-perseveration", "Key features": "key-features"}
 
 PRO_CATEGORIES_EN = [
     # Order: Nana, 12 Oct 2026 (row 1 Production, Comprehension, Reading; row 2 Writing, Semantics, Perseveration).
@@ -302,7 +306,7 @@ def pro(lang):
         if not en:
             return '<div class="video-box" aria-hidden="true"></div>'
         return (f'<button class="video-poster cat-video" type="button" data-vimeo="{PRO_VIDEOS[n]}" data-ratio="4 / 3" '
-                f'aria-label="Play video: {html.escape(n)}">{play_icon}</button>')
+                f'aria-label="Play video: {html.escape(n)}"><img src="ASSET/img/pro-videos/{PRO_VIDEO_POSTERS[n]}.jpg" alt="" loading="lazy">{play_icon}</button>')
     # FI and SV: the heading and text sit inside the box for now (Nana, 12 Oct 2026).
     cats = "\n".join(
         (f'        <div class="tile">{cat_media(n)}<h3>{f(n)}</h3><p>{f(d)}</p></div>' if en else
@@ -313,7 +317,7 @@ def pro(lang):
     key_video = "" if not en else (
         '      <div class="pad key-wrap"><div class="key-video">\n'
         f'        <button class="video-poster cat-video" type="button" data-vimeo="{PRO_KEY_VIDEO}" data-ratio="4 / 3" '
-        f'aria-label="Play video: Key features">{play_icon}</button>\n'
+        f'aria-label="Play video: Key features"><img src="ASSET/img/pro-videos/key-features.jpg" alt="" loading="lazy">{play_icon}</button>\n'
         '        <div class="key-text"><h3>Key features</h3><p>In this video, you learn about the key features of Sanapsis. '
         'We show you how to navigate between tasks and adjust the settings. '
         'You will also learn why Sanapsis provides no direct feedback to the patient.</p></div>\n'
