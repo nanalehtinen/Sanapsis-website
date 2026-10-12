@@ -367,7 +367,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .video-box { aspect-ratio: 4 / 3; background: var(--pro-tint); border: 1px solid var(--line); border-radius: 10px; }
 .video-box.text-box { box-sizing: border-box; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; }
 .key-wrap { padding-top: 24px; }
-.key-video { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start; border-top: 3px solid var(--pro); padding-top: 18px; margin-bottom: 8px; }
+.key-video { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; border-top: 3px solid var(--pro); padding-top: 18px; margin-bottom: 8px; }
 .key-video .video-poster { flex: 2 1 560px; width: auto; }
 .key-video .key-text { flex: 1 1 260px; display: flex; flex-direction: column; gap: 10px; }
 .key-video h3 { font-weight: 600; font-size: 20px; }

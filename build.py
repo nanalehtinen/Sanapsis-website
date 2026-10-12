@@ -313,14 +313,14 @@ def pro(lang):
          f'        <div class="tile"><div class="video-box text-box"><h3>{f(n)}</h3><p>{f(d)}</p></div></div>')
         for n, d in PRO_CATEGORIES_EN)
     # Key Features video above the categories, English only, as on the old site's SanapsisPro page (Nana, 12 Oct 2026).
-    # Caption copied verbatim from the old site.
+    # Caption: Nana's wording (12 Oct 2026).
     key_video = "" if not en else (
         '      <div class="pad key-wrap"><div class="key-video">\n'
         f'        <button class="video-poster cat-video" type="button" data-vimeo="{PRO_KEY_VIDEO}" data-ratio="4 / 3" '
         f'aria-label="Play video: Key features"><img src="ASSET/img/pro-videos/key-features.jpg" alt="" loading="lazy">{play_icon}</button>\n'
-        '        <div class="key-text"><h3>Key features</h3><p>In this video, you learn about the key features of Sanapsis. '
-        'We show you how to navigate between tasks and adjust the settings. '
-        'You will also learn why Sanapsis provides no direct feedback to the patient.</p></div>\n'
+        '        <div class="key-text"><h3>Key features</h3><p>In this video, you learn about the key features of SanapsisPro. '
+        'We show you how to navigate between tasks and adjust the settings.</p>'
+        '<p>You will also learn why SanapsisPro does not provide direct feedback to the patient.</p></div>\n'
         '      </div></div>\n')
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">
