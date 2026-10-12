@@ -262,6 +262,11 @@ def home(lang):
 
 # ---------------------------------------------------------------- SanapsisPro
 
+# Vimeo videos of the SanapsisPro categories, taken from the old site's SanapsisPro page (12 Oct 2026).
+# Semantics and Perseveration share one video there. "Key Features" (119886303) is not placed yet.
+PRO_VIDEOS = {"Reading": "119886306", "Writing": "119887345", "Production": "119886305",
+              "Comprehension": "119886304", "Semantics": "119886307", "Perseveration": "119886307"}
+
 PRO_CATEGORIES_EN = [
     ("Reading", "Tasks from simple word and picture matching to more complex pieces of text."),
     ("Writing", "Copying letters with your fingertips, using the keyboard to fill in sentences, and complex writing tasks using paper and pen."),
@@ -288,8 +293,10 @@ def pro(lang):
         paras = [draft(p, "sv") for p in SV_PRO]
     else:
         paras = [f(p) for p in paras_en]
+    play_icon = '<span class="play" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#ffffff"/></svg></span>'
     cats = "\n".join(
-        f'        <div class="tile"><div class="video-slot">{ph("VIDEO")}</div><h3>{f(n)}</h3><p>{f(d)}</p></div>'
+        f'        <div class="tile"><button class="video-poster cat-video" type="button" data-vimeo="{PRO_VIDEOS[n]}" data-ratio="4 / 3" '
+        f'aria-label="Play video: {html.escape(n)}">{play_icon}</button><h3>{f(n)}</h3><p>{f(d)}</p></div>'
         for n, d in PRO_CATEGORIES_EN)
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">

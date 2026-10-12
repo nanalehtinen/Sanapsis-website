@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     button.addEventListener('click', function () {
       var frame = document.createElement('div');
       frame.className = 'video-frame';
+      if (button.dataset.ratio) frame.style.aspectRatio = button.dataset.ratio;
       var iframe = document.createElement('iframe');
       iframe.src = 'https://player.vimeo.com/video/' + button.dataset.vimeo + '?autoplay=1&dnt=1';
       iframe.title = button.getAttribute('aria-label');
