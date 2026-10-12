@@ -233,7 +233,7 @@ NANA_EN_PLUS_P2 = "With Sanapsis+, you can strengthen word-level communication i
 
 EN_DRAFT_PRO = [
     "SanapsisPro is designed for speech-language pathologists. It supports you in planning and delivering adult neurological speech therapy, with a wide range of exercises, ideas for planning sessions, and materials for working through the exercises with your client. Over 35 exercise types are grouped into six categories, and all materials are available in three languages: English (US), Finnish, and Swedish.",
-    "To get a feel for how SanapsisPro works, download SanapsisLite, which includes sample exercises in all three languages.",
+    "To get a feel for how SanapsisPro works, download SanapsisLite for a sample of exercises in all three languages (link below).",
 ]
 
 EN_DRAFT_PLUS = dict(
