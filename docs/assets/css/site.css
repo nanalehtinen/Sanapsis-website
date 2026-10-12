@@ -147,7 +147,8 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
   .app-intro.pro { display: grid; grid-template-columns: minmax(0, 420px) minmax(0, 1fr); column-gap: 56px; align-items: start; }
   .app-intro.pro .intro-head { grid-column: 1; grid-row: 1; }
   .app-intro.pro .text { grid-column: 1; grid-row: 2; }
-  .app-intro.pro .shots { grid-column: 2; grid-row: 2; margin-top: 0; }
+  /* Screenshots span the heading and text rows and sit on the bottom line of the Get box (Nana, 12 Oct 2026). */
+  .app-intro.pro .shots { grid-column: 2; grid-row: 1 / span 2; align-self: end; margin-top: 0; }
 }
 .shot { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); }
 .get-box {
