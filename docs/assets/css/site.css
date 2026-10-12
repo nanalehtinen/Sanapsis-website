@@ -13,7 +13,8 @@
   --line: #e8e8e8;
   --link: #2c3150;
   --pro: #f08605;
-  --pro-button: #a85e04;
+  --pro-button: #f58308;  /* sampled from the SanapsisPro main menu screenshot (Nana, 12 Oct 2026); was #a85e04 */
+  --pro-cream: #f3ebd6;   /* cream frame of the same screenshot */
   --pro-tint: #fdf1e3;
   --plus: #123966;
   --plus-tint: #e8edf5;
@@ -365,7 +366,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .video-poster.cat-video .play { width: 60px; height: 60px; background: transparent; border: 2px solid #ffffff; box-shadow: none; filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.45)); }
 .video-poster.cat-video { overflow: hidden; }
 .video-poster.cat-video img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.video-box { aspect-ratio: 4 / 3; background: var(--pro-tint); border: 1px solid var(--line); border-radius: 10px; }
+.video-box { aspect-ratio: 4 / 3; background: var(--pro-cream); border: 1px solid var(--line); border-radius: 10px; }
 .video-box.text-box { box-sizing: border-box; padding: 24px 26px; display: flex; flex-direction: column; gap: 10px; }
 .key-wrap { padding-top: 24px; }
 .key-video { display: flex; flex-wrap: wrap; gap: 32px; align-items: center; border-top: 3px solid var(--pro); padding-top: 18px; margin-bottom: 8px; }
