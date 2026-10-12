@@ -300,8 +300,10 @@ def pro(lang):
             return '<div class="video-box" aria-hidden="true"></div>'
         return (f'<button class="video-poster cat-video" type="button" data-vimeo="{PRO_VIDEOS[n]}" data-ratio="4 / 3" '
                 f'aria-label="Play video: {html.escape(n)}">{play_icon}</button>')
+    # FI and SV: the heading and text sit inside the box for now (Nana, 12 Oct 2026).
     cats = "\n".join(
-        f'        <div class="tile">{cat_media(n)}<h3>{f(n)}</h3><p>{f(d)}</p></div>'
+        (f'        <div class="tile">{cat_media(n)}<h3>{f(n)}</h3><p>{f(d)}</p></div>' if en else
+         f'        <div class="tile"><div class="video-box text-box"><h3>{f(n)}</h3><p>{f(d)}</p></div></div>')
         for n, d in PRO_CATEGORIES_EN)
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">
