@@ -34,6 +34,9 @@ LINKS = {
     "plus_android": "https://play.google.com/store/apps/details?id=net.puheklinikka.sanapsis.plus.paid",
     "survey": "https://docs.google.com/forms/d/e/1FAIpQLSdIjSR9CeAn4M-SU6pFMydha4Se2FIc-rOR6Kv4jv2Wvd8CyQ/viewform?usp=sharing",
     "email": "sanapsis@puheklinikka.net",
+    # Nana, 12 Oct 2026. LinkedIn: the link Nana sent was the admin dashboard; this is the public showcase page (unverified).
+    "facebook": "https://www.facebook.com/Sanapsis/",
+    "linkedin": "https://www.linkedin.com/showcase/106458612/",
     "clinic": "https://www.puheklinikka.net",
 }
 
@@ -168,6 +171,8 @@ def footer(lang):
       <a href="{LINKS['survey']}">{u['f_survey']}</a>
       <a href="{url(lang, 'privacy/')}">{u['f_privacy']}</a>
       <a href="{url(lang, 'support/')}#contact">{u['f_contact']}</a>
+      <a href="{LINKS['facebook']}">Facebook</a>
+      <a href="{LINKS['linkedin']}">LinkedIn</a>
     </nav>
     <!-- Logo on the right: it will become the stand.chat chat icon (Nana, 5 Oct 2026). -->
     <img class="brand" src="ASSET/img/logo-footer.svg" alt="Sanapsis" width="140" height="32">
@@ -464,7 +469,7 @@ def about(lang):
 {ps}
         </div>
       </div>
-      <div class="pad cta-row"><a class="button pro" href="{url(lang, 'support/')}#contact">{button}</a></div>"""
+      <div class="pad cta-row"><a class="button pro" href="mailto:{LINKS['email']}">{button}</a></div>"""
     return page(lang, "about/", "About | Sanapsis", "About Sanapsis and the team behind it.", body)
 
 
@@ -556,6 +561,7 @@ def blog_head(lang, cat):
         <div class="stack">
           <h1 class="page-title">Blog</h1>
           <p class="blog-name">{BLOG_NAME}</p>
+{'' if lang == 'en' else '          <p class="blog-lang">Blog available only in English.</p>'}
         </div>
         <nav class="chips" aria-label="Filter posts">
 {chips}

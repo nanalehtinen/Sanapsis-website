@@ -33,7 +33,7 @@ T = {
         "SanapsisPro on tehty puheterapeuteille. Se muuttaa iPadisi joustavaksi ja monipuoliseksi terapiaideoiden ja -materiaalien kirjastoksi.",
         "SanapsisPro är gjord för talterapeuter. Den förvandlar din iPad till ett flexibelt och mångsidigt bibliotek med terapiidéer och material."),
     "Learn more about SanapsisPro": ("Lue lisää SanapsisProsta", "Läs mer om SanapsisPro"),
-    "For practice at home": ("Harjoitteluun kotona", "För träning hemma"),
+    "For practice at home": ("Kotiharjoittelun tueksi", "För träning hemma"),
     "If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.": (
         "Jos etsit tapaa harjoitella puhetta ja kommunikointia kotona, Sanapsis+ on tehty sinulle.",
         "Om du söker ett sätt att öva tal och kommunikation hemma är Sanapsis+ gjord för dig."),
@@ -164,10 +164,10 @@ NANA_FI = {
     # Support page
     "Report a bug": "Ilmoita virheestä",
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
-        "Kerro siitä meille sähköpostilla alla olevan painikkeen kautta niin korjaamme virheen mitä pikimmin. Mainitse tehtävän nimi ja kuvaus (mitä näet näytöllä) ja tiedot virheestä tai ongelmasta. Mitä tarkemmin, sitä parempi. Myös kuvakaappaukset auttavat. Kiitos avusta!",
+        "Kerro siitä meille niin korjaamme virheen mitä pikimmin. Mainitse viestissä tehtävän nimi ja kuvaus (mitä näet näytöllä) ja tiedot virheestä tai ongelmasta. Mitä tarkemmin, sitä parempi. Myös kuvakaappaukset auttavat. Kiitos avusta!",
     "Found a bug in SanapsisPro or Sanapsis+?": "Löysitkö virheen SanapsisProsta tai Sanapsis+:sta?",
     "Screenshot (optional)": "Kuvakaappaus (ei pakollinen)",
-    "We're always happy to hear suggestions for improvement as well!": "Otamme aina mielellämme vastaan kehitysehdotuksia!",
+    "We're always happy to hear suggestions for improvement as well!": "Otamme aina mielellämme vastaan myös vapaata palautetta ja kehitysehdotuksia.",
     # Sanapsis+ page
     "Four core language areas": "Neljä tehtävätyyppiä",
     "Please note": "Huomaathan!",
@@ -186,22 +186,22 @@ NANA_FI_PRO = [
 ]
 
 NANA_FI_PLUS = dict(
-    lead="Sanapsis+ on suunniteltu henkilöille, joilla on puheen ja kommunikoinnin haasteita neurologisista syistä johtuen. Näitä voivat olla esimerkiksi afasia, aivoverenkiertohäiriö (AVH), aivovamma tai etenevät neurologiset sairaudet.",
+    lead="Sanapsis+ on suunniteltu henkilöille, joilla on puheen ja kommunikoinnin haasteita neurologisista syistä johtuen. Näitä voivat olla esimerkiksi afasia, aivoverenkiertohäiriö (AVH) tai traumaattinen aivovamma.",
     p2="Sanapsis+ -sovelluksen avulla voit aktivoida ja vahvistaa sanatasoista kommunikointia neljällä osa-alueella: puhuminen, kuuntelu, lukeminen ja kirjoittaminen.",
     p3="Tehtävien lisäksi sovellus tarjoaa ideoita ja neuvoja puheen ja kielen harjoitteluun arjessa itsenäisesti tai yhdessä läheisen kanssa. Vinkit liittyvät tavallisiin tilanteisiin ja ympäristön hyödyntämiseen, sillä arjessa tapahtuvat yhteiset oivallukset kantavat kauas!",
     get_note="Sanapsis+ on helppokäyttöinen, ja harjoittelun aloittaminen on vain muutaman napautuksen päässä!",
-    vocab="Kaikki Sanapsis+ sovelluksen tehtävät pohjautuvat tuttuihin arjen sanoihin. Voit valita harjoituskategoriaksi: koti, esineet, ruoka ja juoma, vaatteet, ympäristö, matkustaminen, vapaa-aika ja verbit. Harjoitukset ja materiaalit on käytettävissä kolmella kielellä: suomi, ruotsi ja englanti.",
+    vocab="Kaikki Sanapsis+ sovelluksen tehtävät pohjautuvat tuttuihin arjen sanoihin. Voit valita harjoituskategoriaksi: koti, esineet, ruoka ja juoma, vaatteet, ympäristö, matkustaminen, vapaa-aika tai verbit. Harjoitukset ja materiaalit on käytettävissä kolmella kielellä: suomi, ruotsi ja englanti.",
 )
 
 # About page, Finnish (HTML allowed; {clinic} is the Puheklinikka link).
 NANA_FI_ABOUT = [
-    "Olen Nana, aikuisten puheterapiasta erityisen innostunut puheterapeutti sekä Sanapsis-sovellusten pääsuunnittelija ja kehittäjä. Onpa kiva tutustua!",
-    'Olen työskennellyt aikuisneurologisten asiakkaiden kanssa vuodesta 2004. Idea Sanapsiksesta nousi alunperin suorasta terapiatyötarpeesta. Ensimmäinen Sanapsis-sovellus syntyi aikuisneurologiseen puheterapiaan erikoistuneen yrityksemme, <a href="{clinic}">Puheklinikan</a>, omaksi työkaluksi. Kaipasimme terapiatyön tueksi työvälinettä, joka helpottaa terapian suunnittelua ja toteutusta tarjoamalla monipuolisia ideoita ja työskentelymahdollisuuksia sekä nopean pääsyn materiaaliin, joka heijastaa asiakkaidemme omaa arkea ja elinympäristöä. Yhtä tärkeää meille oli, että sovellus mahdollistaa tavoitteiden joustavan asettamisen ja tukee merkityksellistä vuorovaikutusta terapeutin ja asiakkaan välillä.',
-    "Monien kokeilujen ja kehitysvaiheiden myötä <strong>SanapsisPro</strong> alkoi vähitellen muistuttaa sitä työkalua, jota olimme tavoitelleet. Käsissämme oli selkeä ja monipuolinen tuki joustavaan ja vuorovaikutteiseen terapiatyöhön. Lisäsimme mukaan yksityiskohtaiset ohjeet ja runsaasti ideoita erilaisista tavoista hyödyntää sovelluksen tehtäviä. Sitten olikin mahdollista jakaa meille tärkeä työkalu kollegoille! SanapsisPron ensimmäinen versio julkaistiin App Storessa vuonna 2012. Vuonna 2021 julkaisimme SanapsisPron rinnalle kuntoutujien omatoimiseen harjoitteluun suunnitellun sovelluksen, <strong>Sanapsis+</strong>.",
-    "Suuri osa Sanapsis-perheen sovellusten kehitystyöstä on toteutunut yhteistyössä upeiden asiakkaidemme kanssa. Jos olet tarkkana, saatat jopa löytää materiaaleista muutamia Puheklinikalta tuttuja kasvoja. Se jos mikä on tae siitä, että materiaalit on suunniteltu, kehitetty ja testattu nimenomaan elämänmakuiseen ja aktiiviseen puheterapiakäyttöön!",
+    "Olen Nana, aikuisten puheterapiasta erityisen innostunut puheterapeutti sekä Sanapsis-sovellusten pääsuunnittelija ja kehittäjä. Olen työskennellyt aikuisneurologisten asiakkaiden kanssa vuodesta 2004. Onpa kiva tutustua!",
+    'Idea Sanapsiksesta nousi alunperin suorasta terapiatyötarpeesta. Ensimmäinen Sanapsis-sovellus syntyi aikuisneurologiseen puheterapiaan erikoistuneen yritykseni, <a href="{clinic}">Puheklinikan</a>, omaksi työkaluksi. Kaipasimme terapiatyön tueksi työvälinettä, joka helpottaa terapian suunnittelua ja toteutusta tarjoamalla monipuolisia ideoita ja työskentelymahdollisuuksia sekä nopean pääsyn materiaaliin, joka heijastaa asiakkaidemme omaa arkea ja elinympäristöä. Yhtä tärkeää meille oli, että sovellus mahdollistaa tavoitteiden joustavan asettamisen ja tukee merkityksellistä vuorovaikutusta terapeutin ja asiakkaan välillä.',
+    "Monien kokeilujen ja kehitysvaiheiden myötä SanapsisPro alkoi vähitellen muistuttaa sitä työkalua, jota olimme tavoitelleet. Käsissämme oli selkeä ja monipuolinen tuki joustavaan ja vuorovaikutteiseen terapiatyöhön. Lisäsimme mukaan yksityiskohtaiset ohjeet ja runsaasti ideoita erilaisista tavoista hyödyntää sovelluksen tehtäviä. Sitten olikin mahdollista jakaa meille tärkeä työkalu kollegoille! SanapsisPron ensimmäinen versio julkaistiin App Storessa vuonna 2012. Vuonna 2021 julkaisimme SanapsisPron rinnalle kuntoutujien omatoimiseen harjoitteluun suunnitellun sovelluksen, Sanapsis+.",
+    "Suuri osa Sanapsis-perheen sovellusten kehitystyöstä on toteutunut yhteistyössä upeiden asiakkaidemme kanssa. Jos olet tarkkana, saatat jopa löytää materiaaleista muutamia Puheklinikalta tuttuja kasvoja. Se jos mikä on tae siitä, että materiaalit on suunniteltu, kehitetty ja testattu nimenomaan elämänmakuiseen puheterapiakäyttöön!",
     "Sanapsis-perheen sovellusten kehitystyö jatkuu edelleen, ja kuulemme aina mielellämme ideoita, käyttökokemuksia ja kehitysehdotuksia. Voit lähettää meille risuja, ruusuja ja muitakin kuulumisia alla olevan painikkeen kautta.",
-    'Jos haluat lukea lisää ajatuksiani aikuisten puheterapiasta ja erityisesti teknologian roolista puheterapiassa, käy kurkkaamassa blogiani <a href="{blog}">All The Things I Love About Speech Therapy With Adults</a> (luettavissa vain englanniksi).',
-    "Jos olet puheterapeutti ja haluat kokeilla Sanapsis+-sovellusta asiakkaidesi kanssa, ota yhteyttä, niin järjestämme sinulle mahdollisuuden ladata sovellus maksutta.",
+    'Jos haluat lukea lisää ajatuksiani aikuisten puheterapiasta ja erityisesti teknologian roolista puheterapiassa, käy kurkkaamassa blogia <a href="{blog}">All The Things I Love About Speech Therapy With Adults</a> (luettavissa vain englanniksi).',
+    "Jos olet puheterapeutti ja haluat kokeilla Sanapsis+-sovellusta asiakkaidesi kanssa, ota yhteyttä, niin järjestän sinulle mahdollisuuden ladata sovellus maksutta.",
 ]
 
 
