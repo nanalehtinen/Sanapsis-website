@@ -403,8 +403,8 @@ def plus(lang):
             <div class="title">{t['get']}</div>
             <div class="note">{t['get_note']}</div>
             <div class="buttons">
-              <a class="button plus" href="{LINKS['plus_ios'][lang]}">{t['ios']}</a>
-              <a class="button plus" href="{LINKS['plus_android']}">{t['android']}</a>
+              <a class="button plus" href="{LINKS['plus_ios'][lang]}">{t['ios'].replace(' (', '<br>(')}</a>
+              <a class="button plus" href="{LINKS['plus_android']}">{t['android'].replace(' (', '<br>(')}</a>
             </div>
           </div>
         </div>
