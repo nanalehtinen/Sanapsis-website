@@ -7,6 +7,7 @@ Cloudflare Pages as is. Texts live in the PAGES dictionaries below.
 Text wrapped in ph() is a placeholder that still needs writing.
 """
 import html
+import urllib.parse
 import os
 import sys
 
@@ -477,27 +478,19 @@ def support(lang):
         "fi": ("Hei! Kysy minulta mitä tahansa SanapsisProsta tai Sanapsis+:sta.", "Kirjoita kysymyksesi…", "Lähetä"),
         "sv": ("Hej! Fråga mig vad du vill om SanapsisPro eller Sanapsis+.", "Skriv din fråga…", "Skicka"),
     }[lang]
-    # The form does not send anything yet: the form service depends on the hosting choice.
+    # Bug reports go by email (Nana, 12 Oct 2026): GitHub Pages can't receive forms, and email lets people attach screenshots.
+    # The button label and subject are Claude's wording, highlighted until Nana approves them.
+    mail_label, mail_subject = {
+        "en": ("Email us", "Bug report"),
+        "fi": ("Lähetä sähköpostia", "Virheilmoitus"),
+        "sv": ("Skicka e-post", "Felrapport"),
+    }[lang]
+    # Claude changed "using the form below" to the email wording; highlighted until Nana approves.
+    bug_text = f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')
+    for phrase in ("by email using the button below", "sähköpostilla alla olevan painikkeen kautta", "via e-post med knappen nedan"):
+        bug_text = bug_text.replace(phrase, f'<span class="ph" lang="{lang}">{phrase}</span>')
+    mailto = f"mailto:{LINKS['email']}?subject={urllib.parse.quote(mail_subject)}"
     body = f"""      <div class="pad page-head"><h1 class="page-title">{f('Support')}</h1></div>
-      <div class="pad two-col">
-        <form class="main form" id="report" onsubmit="return false">
-          <div class="accent-line"></div>
-          <h2>{f('Report a bug')}</h2>
-          <p class="body-text" style="margin: 0"><strong>{f('Found a bug in SanapsisPro or Sanapsis+?')}</strong> {f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')}</p>
-          <label>{f('Name')}<input type="text" name="name" autocomplete="name"></label>
-          <label>{f('Email')}<input type="email" name="email" autocomplete="email"></label>
-          <label>{f('App')}<select name="app"><option>SanapsisPro</option><option>Sanapsis+</option><option>SanapsisLite</option></select></label>
-          <label>{f('Message')}<textarea name="message" rows="5"></textarea></label>
-          <label>{f('Screenshot (optional)')}<input type="file" name="screenshot" accept="image/*"></label>
-          <button class="button" type="submit">{f('Send')}</button>
-          <p class="body-text" style="margin: 0">{f("We're always happy to hear suggestions for improvement as well!")}</p>
-        </form>
-        <div class="side">
-          <div class="card" id="contact"><h2>{f('Contact')}</h2><a href="mailto:{LINKS['email']}">{LINKS['email']}</a></div>
-          <div class="card"><h2>{f('User survey')}</h2><a href="{LINKS['survey']}">{f('Open the user survey')}</a></div>
-          <div class="card"><h2>{f('Privacy')}</h2><a href="{url(lang, 'privacy/')}">{UI[lang]['f_privacy']}</a></div>
-        </div>
-      </div>
       <div class="faq" id="faq">
         <h2>{f('Frequently asked questions')}</h2>
         <div class="chat-card" aria-label="Chat (placeholder)">
@@ -511,6 +504,20 @@ def support(lang):
           </div>
         </div>
         <p class="chat-note">{ph("stand.chat chat box goes here")}</p>
+      </div>
+      <div class="pad two-col">
+        <div class="main form" id="report">
+          <div class="accent-line"></div>
+          <h2>{f('Report a bug')}</h2>
+          <p class="body-text" style="margin: 0"><strong>{f('Found a bug in SanapsisPro or Sanapsis+?')}</strong> {bug_text}</p>
+          <a class="button" href="{mailto}"><span class="ph" lang="{lang}">{mail_label}</span></a>
+          <p class="body-text" style="margin: 0">{f("We're always happy to hear suggestions for improvement as well!")}</p>
+        </div>
+        <div class="side">
+          <div class="card" id="contact"><h2>{f('Contact')}</h2><a href="mailto:{LINKS['email']}">{LINKS['email']}</a></div>
+          <div class="card"><h2>{f('User survey')}</h2><a href="{LINKS['survey']}">{f('Open the user survey')}</a></div>
+          <div class="card"><h2>{f('Privacy')}</h2><a href="{url(lang, 'privacy/')}">{UI[lang]['f_privacy']}</a></div>
+        </div>
       </div>"""
     return page(lang, "support/", "Support | Sanapsis", "Report a bug or contact the Sanapsis team.", body)
 

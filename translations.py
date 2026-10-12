@@ -164,7 +164,7 @@ NANA_FI = {
     # Support page
     "Report a bug": "Ilmoita virheestä",
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
-        "Kerro siitä meille alla olevalla lomakkeella niin korjaamme virheen mitä pikimmin. Mainitse tehtävän nimi ja kuvaus (mitä näet näytöllä) ja tiedot virheestä tai ongelmasta. Mitä tarkemmin, sitä parempi. Myös kuvakaappaukset auttavat. Kiitos avusta!",
+        "Kerro siitä meille sähköpostilla alla olevan painikkeen kautta niin korjaamme virheen mitä pikimmin. Mainitse tehtävän nimi ja kuvaus (mitä näet näytöllä) ja tiedot virheestä tai ongelmasta. Mitä tarkemmin, sitä parempi. Myös kuvakaappaukset auttavat. Kiitos avusta!",
     "Found a bug in SanapsisPro or Sanapsis+?": "Löysitkö virheen SanapsisProsta tai Sanapsis+:sta?",
     "Screenshot (optional)": "Kuvakaappaus (ei pakollinen)",
     "We're always happy to hear suggestions for improvement as well!": "Otamme aina mielellämme vastaan kehitysehdotuksia!",
@@ -218,7 +218,7 @@ EN_DRAFT = {
     "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.":
         "SanapsisPro is intended for use in therapy under the guidance of a licensed speech-language pathologist (SLP). It is not designed for independent use. If you are looking for support for practicing on your own, take a look at Sanapsis+.",
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
-        "Please let us know using the form below, and we’ll fix it as quickly as we can. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better, and screenshots help too. Thank you for your help!",
+        "Please let us know by email using the button below, and we’ll fix it as quickly as we can. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better, and screenshots help too. Thank you for your help!",
 }
 
 class NANA(str):
@@ -285,7 +285,7 @@ SV = {
     "Please note": "Observera",
     # Support page
     "Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!":
-        "Berätta det för oss via formuläret nedan, så rättar vi felet så snabbt vi kan. Ange övningens namn, beskriv uppgiften (vad du ser på skärmen) och berätta vad felet eller problemet gäller. Ju mer detaljerat, desto bättre, och skärmbilder hjälper också. Tack för hjälpen!",
+        "Berätta det för oss via e-post med knappen nedan, så rättar vi felet så snabbt vi kan. Ange övningens namn, beskriv uppgiften (vad du ser på skärmen) och berätta vad felet eller problemet gäller. Ju mer detaljerat, desto bättre, och skärmbilder hjälper också. Tack för hjälpen!",
     "We're always happy to hear suggestions for improvement as well!": "Vi tar alltid gärna emot förbättringsförslag!",
     # About page
     "About Sanapsis": "Om oss",
