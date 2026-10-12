@@ -267,7 +267,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .pager .count { color: var(--muted); }
 
 /* Blog post */
-.blog-post { max-width: 760px; padding-top: 32px; padding-bottom: 56px; }
+.blog-post { max-width: 760px; margin: 0 auto; padding-top: 32px; padding-bottom: 56px; box-sizing: content-box; }
 .blog-post .back { margin: 0 0 24px; }
 .blog-post h1 { font-weight: 600; font-size: 38px; line-height: 1.2; }
 .blog-post .meta { margin: 12px 0 32px; font-size: 15px; color: var(--muted); }
