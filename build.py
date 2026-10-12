@@ -522,11 +522,21 @@ def support(lang):
 
 # ---------------------------------------------------------------- Blog
 
+# The four latest posts on the old blog (sanapsis.com/blog, checked 12 Oct 2026), newest first.
+# Excerpts are the opening lines of Nana's posts; images are each post's first screenshot.
 BLOG_POSTS = [
-    ("16 February 2026", "SanapsisPro", "Next up: Synopsis and a fun fact about the name Sanapsis"),
-    (None, "SanapsisPro", "Summer season, fresh look"),
-    (None, "SanapsisPro", "To the point!"),
-    (None, "SanapsisPro", "Let's add some color!"),
+    ("18 September 2026", "SanapsisPro", "SanapsisLite",
+     "SanapsisLite has had a refresh! The free demo version of SanapsisPro now mirrors the full app with a new look.",
+     "sanapsislite.jpg", "SanapsisLite main menu with the six exercise categories"),
+    ("9 August 2026", "SanapsisPro", "Let's add some color!",
+     "Next up in the Speech Production category is Descriptive Sentence.",
+     "add-some-color.jpg", "Speech Production exercise list in SanapsisPro, with Descriptive Sentence highlighted"),
+    ("15 July 2026", "SanapsisPro", "To the point!",
+     "Next up in the Speech Production category is Precise Sentence. This exercise is all about precise, concise expression.",
+     "to-the-point.jpg", "Speech Production exercise list in SanapsisPro, with Precise Sentence circled"),
+    ("21 June 2026", "SanapsisPro", "Summer season, fresh look",
+     "In Finland, there is an expression about shedding your “winter fur” when you take the first swim of the summer.",
+     "summer-fresh-look.jpg", "The new SanapsisPro main menu with the six exercise categories"),
 ]
 
 
@@ -534,14 +544,13 @@ def blog(lang):
     # Nana (5 Oct 2026): the blog is English only, also on the Finnish and Swedish sites.
     f = lambda s: s
     rows = []
-    for date, tag, title in BLOG_POSTS:
-        d = date if date else ph("DATE")
+    for date, tag, title, excerpt, img, alt in BLOG_POSTS:
         rows.append(f"""        <a class="post" href="#">
-          <span class="thumb">{ph('IMAGE')}</span>
+          <img class="thumb" src="ASSET/img/blog/{img}" alt="{html.escape(alt)}" loading="lazy" width="800" height="582">
           <span class="info">
-            <span class="meta">{d} · <span class="tag">{tag}</span></span>
-            <span class="title">{title}</span>
-            <span class="excerpt">{ph('EXCERPT')}</span>
+            <span class="meta">{date} · <span class="tag">{tag}</span></span>
+            <span class="title">{html.escape(title)}</span>
+            <span class="excerpt">{html.escape(excerpt)}</span>
           </span>
         </a>""")
     posts = "\n".join(rows)
