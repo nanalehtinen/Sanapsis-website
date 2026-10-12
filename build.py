@@ -268,10 +268,11 @@ PRO_VIDEOS = {"Reading": "119886306", "Writing": "119887345", "Production": "119
               "Comprehension": "119886304", "Semantics": "119886307", "Perseveration": "119886307"}
 
 PRO_CATEGORIES_EN = [
-    ("Reading", "Tasks from simple word and picture matching to more complex pieces of text."),
-    ("Writing", "Copying letters with your fingertips, using the keyboard to fill in sentences, and complex writing tasks using paper and pen."),
+    # Order: Nana, 12 Oct 2026 (row 1 Production, Comprehension, Reading; row 2 Writing, Semantics, Perseveration).
     ("Production", "Basic naming (nouns), creating a sentence from given words, and giving instructions."),
     ("Comprehension", "YES/NO questions, following instructions, and questions based on text."),
+    ("Reading", "Tasks from simple word and picture matching to more complex pieces of text."),
+    ("Writing", "Copying letters with your fingertips, using the keyboard to fill in sentences, and complex writing tasks using paper and pen."),
     ("Semantics", 'Exercises such as "Is this simile true", which works especially well with high-level TBI patients.'),
     ("Perseveration", 'Material to work with those who tend to "get stuck" in their speech or even comprehension.'),
 ]

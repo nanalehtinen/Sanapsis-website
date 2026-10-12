@@ -150,8 +150,19 @@ NANA_FI = {
     "iPad. There are no in-app purchases, now or in the future. All updates, including new exercises, are included for free.":
         "Sanapsis on kertahankinta. Sovelluksessa ei ole sovelluksen sisäisiä ostoja, ei nyt eikä tulevaisuudessa. Kaikki päivitykset, myös uudet tehtävät, ovat maksuttomia.",
     "Try SanapsisLite first": "Kokeile SanapsisLite sovellusta",
+    # SanapsisPro categories (Nana, 12 Oct 2026). Typos tidied: quote marks, spaces, "kuva- ja".
+    "Tasks from simple word and picture matching to more complex pieces of text.":
+        "Tehtäviä yksinkertaisesta sanan ja kuvan yhdistämisestä vaativampiin teksteihin. Mukana myös laajaa kognitiivista prosessointia haastavia ja vuorovaikutusta stimuloivia tehtäviä.",
+    "Copying letters with your fingertips, using the keyboard to fill in sentences, and complex writing tasks using paper and pen.":
+        "Kirjainten jäljentämistä, lauseiden täydentämistä sekä vaativampia kirjoitustehtäviä. Tehtävissä hyödynnetään kosketusnäyttöä, näppäimistöä sekä kynää ja paperia.",
+    "Production": "Puheen tuotto",
+    "Basic naming (nouns), creating a sentence from given words, and giving instructions.":
+        "Puheen tuoton tehtäviin kuuluu perusnimeämistä (substantiivit ja verbit), lauseen rakentamista ja ohjeiden antamista. Tehtävissä hyödynnetään kuva- ja tekstimateriaalia.",
+    "Comprehension": "Vastaanotto",
     'Exercises such as "Is this simile true", which works especially well with high-level TBI patients.':
-        "Tehtäviä, kuten ”Pitääkö vertaus paikkansa”",
+        "Materiaalia ja ideoita merkityksen ja merkityssuhteiden harjoitteluun. Mukana tehtäviä kuten ”Täydennä vertaus” ja ”Mikä ei kuulu joukkoon”",
+    'Material to work with those who tend to "get stuck" in their speech or even comprehension.':
+        "Materiaalia puheterapiaan, jossa työskentelyn kohteena on oire jossa puhe tai ymmärtäminen pyrkii ”juuttumaan”.",
     "Important information": "Huomaathan!",
     "Sanapsis is intended for use in therapy sessions under the guidance of a licensed Speech-Language Pathologist (SLP). It is not designed for independent use.":
         "SanapsisPro on tarkoitettu käytettäväksi terapiassa laillistetun puheterapeutin ohjauksessa. Sitä ei ole suunniteltu itsenäiseen käyttöön. Jos etsit tukea omatoimiseen harjoitteluun, tutustu Sanapsis+ sovellukseen.",
