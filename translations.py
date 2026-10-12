@@ -180,8 +180,9 @@ NANA_FI = {
 NANA_FI_FOOTER_BUG = "Raportoi bugi"
 
 NANA_FI_PRO = [
-    "SanapsisPro on puheterapeuteille suunniteltu sovellus, joka tarjoaa tukea aikuisneurologisen puheterapian suunnitteluun ja toteuttamiseen. SanapsisPro sisältää laajan valikoiman harjoituksia, ideoita terapian suunnitteluun sekä materiaalia harjoituksen läpiviemiseen asiakkaan kanssa. SanapsisPron harjoitukset on ryhmitelty kuuteen tehtäväkategoriaan ja sovellus sisältää yhteensä yli 35 tehtävätyyppiä. Kaikki materiaalit on käytettävissä kolmella kielellä: suomi, ruotsi ja englanti (US).",
-    "Voit tutustua SanapsisPron ideaan lataamalla SanapsisLite sovelluksen, joka tarjoaa esimerkkejä harjoituksista kolmella kielellä.",
+    "SanapsisPro on puheterapeuteille suunniteltu sovellus, joka tarjoaa tukea aikuisneurologisen puheterapian suunnitteluun ja toteuttamiseen.",
+    "SanapsisPro sisältää laajan valikoiman harjoituksia, ideoita terapian suunnitteluun sekä materiaalia harjoituksen läpiviemiseen asiakkaan kanssa. SanapsisPron harjoitukset on ryhmitelty kuuteen tehtäväkategoriaan ja sovellus sisältää yhteensä yli 35 tehtävätyyppiä. Kaikki materiaalit on käytettävissä kolmella kielellä: suomi, ruotsi ja englanti (US).",
+    "Voit tutustua SanapsisPron ideaan lataamalla SanapsisLite sovelluksen (linkki alla). SanapsisLite sisältää esimerkkejä harjoituksista suomeksi, ruotsiksi ja englanniksi.",
 ]
 
 NANA_FI_PLUS = dict(
