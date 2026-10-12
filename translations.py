@@ -237,7 +237,7 @@ EN_DRAFT_PRO = [
 ]
 
 EN_DRAFT_PLUS = dict(
-    lead="Sanapsis+ is designed for people with speech and communication difficulties due to neurological conditions, such as aphasia, stroke, traumatic brain injury, or progressive neurological diseases.",
+    lead="Sanapsis+ is designed for people with speech and communication difficulties due to neurological conditions, such as aphasia, stroke or traumatic brain injury.",
         p3="Alongside the exercises, the app offers ideas and tips for practicing speech and language in everyday life, on your own or with a loved one. The tips draw on ordinary situations and your surroundings, because small breakthroughs in daily life go a long way!",
     get_note="Sanapsis+ is easy to use, and you can start practicing in just a few taps!",
     areas_title="Four exercise types",
