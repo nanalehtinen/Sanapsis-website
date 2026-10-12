@@ -246,13 +246,13 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 /* Blog */
 .blog-head { padding-top: 32px; padding-bottom: 8px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; }
 .blog-name { margin: 0; font-family: var(--heading-font); font-size: 20px; color: var(--muted); }
-.blog-lang { margin: 6px 0 0; font-size: 15px; color: var(--muted); font-style: italic; }
+.blog-lang { margin: -12px 0 0; font-size: 15px; color: var(--muted); font-style: italic; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; font-size: 15px; }
 .chip { text-decoration: none; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); }
 .chip.active { background: var(--link); color: #fff; border-color: var(--link); }
 .chip.pro { border-color: var(--pro); }
 .chip.plus { border-color: var(--plus); }
-.posts { display: flex; flex-direction: column; padding: 24px 40px 56px; }
+.posts { display: flex; flex-direction: column; padding: 8px 40px 56px; }
 .post { display: flex; flex-wrap: wrap; gap: 28px; align-items: center; padding: 24px 16px; border-bottom: 1px solid #eee; text-decoration: none; color: var(--text); border-radius: 8px; transition: background-color .15s ease; }
 .post:hover { background: #f6f6f6; color: var(--text); }
 .post .thumb { flex: 0 0 220px; width: 220px; height: auto; aspect-ratio: 800 / 582; object-fit: cover; background: #f4f4f4; border-radius: 8px; border: 1px solid var(--line); }
