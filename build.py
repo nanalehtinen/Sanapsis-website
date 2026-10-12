@@ -183,9 +183,6 @@ def page(lang, slug, title, description, body):
   <meta name="description" content="{html.escape(description)}">
   {alternates}
   <link rel="icon" href="ASSET/../favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="ASSET/css/site.css?v={CSS_VERSION}">
   <script src="ASSET/js/menu.js" defer></script>
   <script src="ASSET/js/video.js" defer></script>

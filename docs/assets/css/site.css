@@ -1,4 +1,10 @@
 /* Sanapsis site styles. Layout: white "floating page" on navy, footer on navy. */
+/* Fonts are served from this site (not Google) so visitors' IP addresses are not sent to Google. SIL OFL 1.1, licences in assets/fonts/. */
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/montserrat-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Montserrat"; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/montserrat-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url(../fonts/open-sans-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url(../fonts/open-sans-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Open Sans"; font-style: normal; font-weight: 700; font-display: swap; src: url(../fonts/open-sans-latin-700-normal.woff2) format("woff2"); }
 :root {
   --navy: #3d4466;
   --ink: #2b2b2b;
