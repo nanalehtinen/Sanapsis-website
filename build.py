@@ -263,9 +263,11 @@ def home(lang):
 # ---------------------------------------------------------------- SanapsisPro
 
 # Vimeo videos of the SanapsisPro categories, taken from the old site's SanapsisPro page (12 Oct 2026).
-# Semantics and Perseveration share one video there. "Key Features" (119886303) is not placed yet.
+# Semantics and Perseveration share one video there. "Key Features" is PRO_KEY_VIDEO.
 PRO_VIDEOS = {"Reading": "119886306", "Writing": "119887345", "Production": "119886305",
               "Comprehension": "119886304", "Semantics": "119886307", "Perseveration": "119886307"}
+
+PRO_KEY_VIDEO = "119886303"
 
 PRO_CATEGORIES_EN = [
     # Order: Nana, 12 Oct 2026 (row 1 Production, Comprehension, Reading; row 2 Writing, Semantics, Perseveration).
@@ -306,6 +308,16 @@ def pro(lang):
         (f'        <div class="tile">{cat_media(n)}<h3>{f(n)}</h3><p>{f(d)}</p></div>' if en else
          f'        <div class="tile"><div class="video-box text-box"><h3>{f(n)}</h3><p>{f(d)}</p></div></div>')
         for n, d in PRO_CATEGORIES_EN)
+    # Key Features video above the categories, English only, as on the old site's SanapsisPro page (Nana, 12 Oct 2026).
+    # Caption copied verbatim from the old site.
+    key_video = "" if not en else (
+        '      <div class="pad key-wrap"><div class="key-video">\n'
+        f'        <button class="video-poster cat-video" type="button" data-vimeo="{PRO_KEY_VIDEO}" data-ratio="4 / 3" '
+        f'aria-label="Play video: Key features">{play_icon}</button>\n'
+        '        <div class="key-text"><h3>Key features</h3><p>In this video, you learn about the key features of Sanapsis. '
+        'We show you how to navigate between tasks and adjust the settings. '
+        'You will also learn why Sanapsis provides no direct feedback to the patient.</p></div>\n'
+        '      </div></div>\n')
     body = f"""      <div class="pad"><img class="hero short" src="ASSET/img/pro-hero.jpg" alt="Therapist and client at a table with an iPad"></div>
       <div class="pad app-intro pro">
         <div class="intro-head stack">
@@ -329,7 +341,7 @@ def pro(lang):
         </div>
       </div>
       <div class="pad"><h2 class="section-title">{f('Six exercise categories')}</h2></div>
-      <div class="pad tiles categories">
+{key_video}      <div class="pad tiles categories">
 {cats}
       </div>
       <div class="notice pro">
