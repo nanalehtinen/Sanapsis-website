@@ -10,7 +10,7 @@ Swedish follows the Finland-Swedish terms on the current Swedish page
 """
 
 # Languages whose drafts Nana has approved (no highlight). Nana approved FI and EN on 5 Oct 2026.
-APPROVED = {"fi", "en"}
+APPROVED = {"fi", "en", "sv"}  # Swedish approved by Nana, 15 Oct 2026
 
 T = {
     # Navigation and footer
@@ -24,7 +24,7 @@ T = {
     # Home
     "Supporting Speech Therapy with Technology": (
         "Teknologiaa puheterapian tueksi",
-        "Teknik som stöd för talterapi"),
+        "Teknologi som stöd för talterapi"),
     "Two separate apps, each supporting a different part of the therapy journey.": (
         "Kaksi erillistä sovellusta, jotka tukevat kuntoutuksen eri vaiheita.",
         "Två separata appar som stöder olika delar av rehabiliteringen."),
@@ -33,7 +33,7 @@ T = {
         "SanapsisPro on tehty puheterapeuteille. Se muuttaa iPadisi joustavaksi ja monipuoliseksi terapiaideoiden ja -materiaalien kirjastoksi.",
         "SanapsisPro är gjord för talterapeuter. Den förvandlar din iPad till ett flexibelt och mångsidigt bibliotek med terapiidéer och material."),
     "Learn more about SanapsisPro": ("Lue lisää SanapsisProsta", "Läs mer om SanapsisPro"),
-    "For practice at home": ("Kotiharjoittelun tueksi", "För träning hemma"),
+    "For practice at home": ("Kotiharjoittelun tueksi", "För hemövning"),
     "If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.": (
         "Jos etsit tapaa harjoitella puhetta ja kommunikointia kotona, Sanapsis+ on tehty sinulle.",
         "Om du söker ett sätt att öva tal och kommunikation hemma är Sanapsis+ gjord för dig."),
@@ -276,9 +276,9 @@ EN_DRAFT_ABOUT = [
 # All Swedish stays highlighted until Nana approves it. Key: the English key in build.py.
 SV = {
     # Home
-    "Supporting Speech Therapy with Technology": "Teknik som stöd för talterapi",
+    "Supporting Speech Therapy with Technology": "Teknologi som stöd för talterapi",
     "Two separate apps, each supporting a different part of the therapy journey.":
-        "Sanapsis-familjen består av två separata appar som stöder träningen i talterapi på olika sätt.",
+        "Sanapsis-familjen består av två separata appar som stöder talterapiövning på olika sätt.",
     "SanapsisPro is built for professional SLPs. It transforms your iPad into a flexible, open-ended library of therapy ideas and materials.":
         "SanapsisPro är gjord för talterapeuter. Den gör din iPad till ett flexibelt och mångsidigt bibliotek med idéer och material för terapin.",
     "If you are looking for a solution to work on speech and communication at home, Sanapsis+ is built for you.":

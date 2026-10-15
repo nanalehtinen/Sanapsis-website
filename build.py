@@ -389,7 +389,7 @@ def plus(lang):
             get_note="Sanapsis+ är lätt att använda – att komma igång med träningen är bokstavligen bara några klick ifrån!",
             ios="iPad (App Store)", android="Android (Google Play)",
             areas_title=fi_ph("Four core language areas"),
-            areas=["Tal", "Lyssnande", "Läsning", "Skrivning"],
+            areas=["Benämning", "Lyssnande", "Läsning", "Skrivning"],
             vocab_title=fi_ph("Everyday vocabulary"),
             vocab="Alla övningar i Sanapsis+ bygger på bekanta vardagsord inom följande kategorier: hem, föremål, mat och dryck, kläder, miljö, resor, fritid och verb. Alla övningar och material finns tillgängliga på tre språk: finska, svenska och engelska.",
             note_title=fi_ph("Please note"),
@@ -521,10 +521,8 @@ def support(lang):
     mail_subject = {"en": "Bug report", "fi": "Virheilmoitus", "sv": "Felrapport"}[lang]
     # Button label "Report a bug" (Nana, 12 Oct 2026); Finnish uses her footer wording.
     mail_label = {"en": "Report a bug", "fi": NANA_FI_FOOTER_BUG, "sv": draft("Rapportera ett fel", "sv")}[lang]
-    # Claude changed "using the form below" to the email wording; highlighted until Nana approves.
+    # Claude changed "using the form below" to the email wording; highlight removed at Nana's request (15 Oct 2026).
     bug_text = f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')
-    for phrase in ("by email using the button below", "sähköpostilla alla olevan painikkeen kautta", "via e-post med knappen nedan"):
-        bug_text = bug_text.replace(phrase, f'<span class="ph" lang="{lang}">{phrase}</span>')
     mailto = f"mailto:{LINKS['email']}?subject={urllib.parse.quote(mail_subject)}"
     body = f"""      <div class="pad page-head"><h1 class="page-title">{f('Support')}</h1></div>
       <div class="faq" id="faq">
@@ -532,7 +530,7 @@ def support(lang):
         <div class="chat-card" aria-label="Chat (placeholder)">
           <div class="chat-head"><span class="chat-avatar"><img src="ASSET/img/icon.svg" alt="" width="22" height="20"></span>Sanapsis</div>
           <div class="chat-body">
-            <p class="bubble"><span class="ph" lang="{lang}">{chat[0]}</span></p>
+            <p class="bubble">{chat[0]}</p>
           </div>
           <div class="chat-input">
             <input type="text" placeholder="{chat[1]}" disabled aria-label="{chat[1]}">
