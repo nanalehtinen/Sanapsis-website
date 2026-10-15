@@ -383,7 +383,7 @@ def plus(lang):
         t = dict(
             eyebrow=fi_ph("For practice at home"),
             lead="Sanapsis+ är utvecklad för personer med tal- och kommunikationssvårigheter på grund av neurologiska orsaker. Dessa kan vara exempelvis afasi, stroke, hjärnskada eller progressiva neurologiska sjukdomar.",
-            p2="Med hjälp av Sanapsis+ kan du aktivera och stärka kommunikationsförmågan på ordnivå inom fyra delområden: tal, lyssnande, läsning och skrivning.",
+            p2="Med hjälp av Sanapsis+ kan du aktivera och stärka kommunikationsförmågan på ordnivå inom fyra delområden: benämning, lyssnande, läsning och skrivning.",
             p3="Förutom övningarna innehåller appen tips och idéer för att öva tal och språk i vardagen – antingen självständigt eller tillsammans med en närstående. Tipsen är kopplade till vardagliga situationer och omgivningar, eftersom där uppstår de viktigaste samtalen och de insikter som bär vidare.",
             get=fi_ph("Get Sanapsis+"),
             get_note="Sanapsis+ är lätt att använda – att komma igång med träningen är bokstavligen bara några klick ifrån!",
