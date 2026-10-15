@@ -298,6 +298,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .legal h2 { font-weight: 600; font-size: 20px; margin-top: 32px; }
 .legal p, .legal li { font-size: 16px; line-height: 1.7; }
 .legal ul { padding-left: 20px; }
+.legal .legal-date { color: var(--muted); font-size: 14px; margin-top: -8px; }
 
 /* Footer */
 .site-footer {
