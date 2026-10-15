@@ -695,7 +695,8 @@ PRIVACY_EN = """<h1 class="page-title">Privacy Notice</h1>
 <p><strong>Applications (SanapsisPro and Sanapsis+):</strong></p>
 <ul>
 <li>We do not collect, store, or share any personal data through our applications.</li>
-<li>Our apps do not access location data, contacts, photos, microphone, or device identifiers.</li>
+<li>Our apps do not access location data, contacts, photos, or device identifiers.</li>
+<li>Sanapsis+ uses the microphone so that you can listen back to your own speech. Recordings are not saved or shared.</li>
 <li>No registration or login is required to use the applications.</li>
 <li>No third-party analytics, advertising services, or tracking tools are used.</li>
 </ul>
@@ -740,12 +741,128 @@ PRIVACY_EN = """<h1 class="page-title">Privacy Notice</h1>
 <p>Email: <a href="mailto:sanapsis@puheklinikka.net">sanapsis@puheklinikka.net</a></p>"""
 
 
+# Finnish and Swedish: Claude's translations of PRIVACY_EN (15 Oct 2026), for Nana to check.
+M = '<a href="mailto:sanapsis@puheklinikka.net">sanapsis@puheklinikka.net</a>'
+
+PRIVACY_FI = f"""<h1 class="page-title">Tietosuojaseloste</h1>
+<p>Suojaamme yksityisyyttäsi. Tässä tietosuojaselosteessa kerrotaan, miten käsittelemme verkkosivustomme (www.sanapsis.com) sekä sovellustemme SanapsisPron ja Sanapsis+:n kautta kerättyjä tietoja.</p>
+<p>Henkilötietojesi rekisterinpitäjä on Puheklinikka Oy (Sanapsis), Suomi. Voit ottaa meihin yhteyttä osoitteessa {M}.</p>
+<h2>Keräämämme tiedot</h2>
+<p><strong>Verkkosivusto (www.sanapsis.com):</strong></p>
+<ul>
+<li>Tiedot, jotka annat meille vapaaehtoisesti (kuten nimi ja sähköpostiosoite, kun otat meihin yhteyttä suoraan, tukilomakkeen kautta tai kyselyissä).</li>
+<li>Evästeet sivuston toimivuuden ja käyttökokemuksen parantamiseksi.</li>
+<li>Emme kerää arkaluonteisia henkilötietoja (esimerkiksi talous- tai terveystietoja).</li>
+</ul>
+<p><strong>Sovellukset (SanapsisPro ja Sanapsis+):</strong></p>
+<ul>
+<li>Emme kerää, tallenna tai jaa henkilötietoja sovellustemme kautta.</li>
+<li>Sovelluksemme eivät käytä sijaintitietoja, yhteystietoja, valokuvia tai laitetunnisteita.</li>
+<li>Sanapsis+ käyttää mikrofonia, jotta voit kuunnella oman puheesi. Äänitteitä ei tallenneta eikä jaeta.</li>
+<li>Sovellusten käyttö ei edellytä rekisteröitymistä tai kirjautumista.</li>
+<li>Emme käytä kolmansien osapuolten analytiikka- tai mainospalveluita emmekä seurantatyökaluja.</li>
+</ul>
+<h2>Miten käytämme tietojasi</h2>
+<p>Käytämme verkkosivustomme kautta kerättyjä tietoja vastataksemme yhteydenottoihin ja tarjotaksemme asiakastukea, kehittääksemme verkkosivustoamme ja palveluitamme sekä kertoaksemme päivityksistä, tarjouksista tai tähän tietosuojaselosteeseen tehtävistä muutoksista (jos olet antanut siihen suostumuksesi). Emme myy, vuokraa tai luovuta henkilötietojasi kolmansille osapuolille, paitsi jos se on tarpeen pyyntösi täyttämiseksi tai lakisääteisten velvoitteiden noudattamiseksi.</p>
+<h2>Käsittelyn oikeusperuste (GDPR)</h2>
+<p>Jos asut Euroopan talousalueella (ETA), käsittelemme henkilötietojasi seuraavilla oikeusperusteilla:</p>
+<ul>
+<li>Suostumuksesi – yhteydenotot, jotka itse aloitat kanssamme</li>
+<li>Oikeutettu etu – palveluidemme ja viestintämme ylläpito, toiminta ja kehittäminen</li>
+</ul>
+<h2>Tietojen säilyttäminen</h2>
+<p>Säilytämme käyttäjien kanssa käytyä viestintää vain niin kauan kuin se on tarpeen alkuperäisen tarkoituksen täyttämiseksi tai lakisääteisten velvoitteiden noudattamiseksi.</p>
+<p>Sovellusten käyttäjistä ei kerätä eikä säilytetä tietoja.</p>
+<h2>Oikeutesi GDPR:n mukaan</h2>
+<p>Jos asut Euroopan talousalueella (ETA), sinulla on henkilötietojesi osalta seuraavat oikeudet:</p>
+<ul>
+<li>Oikeus saada pääsy tietoihin – voit pyytää kopion tiedoista, joita meillä on sinusta.</li>
+<li>Oikeus tietojen oikaisemiseen – voit pyytää meitä korjaamaan tai päivittämään tietosi.</li>
+<li>Oikeus tietojen poistamiseen (”oikeus tulla unohdetuksi”) – voit pyytää meitä poistamaan henkilötietosi.</li>
+<li>Vastustamisoikeus – voit vastustaa tietojesi käsittelyä silloin, kun käsittely perustuu oikeutettuun etuun.</li>
+<li>Oikeus käsittelyn rajoittamiseen – voit pyytää meitä rajoittamaan tietojesi käyttöä.</li>
+<li>Oikeus siirtää tiedot järjestelmästä toiseen – voit saada tietosi jäsennellyssä, koneellisesti luettavassa muodossa.</li>
+<li>Oikeus tehdä valitus – voit tehdä valituksen paikalliselle tietosuojaviranomaiselle.</li>
+</ul>
+<p>Voit käyttää näitä oikeuksia ottamalla meihin yhteyttä osoitteessa {M}.</p>
+<p>Jos katsot, että olemme loukanneet GDPR:n mukaisia oikeuksiasi, sinulla on oikeus tehdä valitus paikalliselle tietosuojaviranomaiselle.</p>
+<h2>Tietojesi tarkastaminen ja hallinta</h2>
+<p>Voit milloin tahansa kieltäytyä meiltä tulevasta viestinnästä ottamalla meihin yhteyttä osoitteessa {M}. Voit myös tarkistaa, mitä tietoja meillä on sinusta (jos mitään), pyytää tietojen korjaamista tai päivittämistä, pyytää tietojesi poistamista tai kertoa huolistasi tietojesi käytöstä.</p>
+<h2>Tietoturva</h2>
+<p>Suojaamme tietojasi asianmukaisin teknisin ja organisatorisin toimenpitein. Verkkosivuston tietoliikenne on salattu SSL/TLS-protokollilla. Pääsy henkilötietoihin on rajattu työntekijöihin, jotka tarvitsevat niitä asiakastuessa. Palvelimiamme ylläpidetään turvallisissa tiloissa. Emme kerää arkaluonteisia tietoja (kuten talous- tai terveystietoja) verkkosivustomme tai sovellustemme kautta.</p>
+<h2>Evästeet</h2>
+<p>Verkkosivustomme käyttää evästeitä tunnistaakseen palaavat kävijät, tallentaakseen käyttäjän asetukset ja analysoidakseen sivuston liikennettä. Evästeet parantavat sivuston toimivuutta, mutta niitä ei yhdistetä tietoihin, joista sinut voitaisiin tunnistaa. Voit hallita evästeasetuksia selaimesi asetuksista.</p>
+<h2>Linkit muille sivustoille</h2>
+<p>Verkkosivustollamme voi olla linkkejä ulkopuolisille sivustoille. Emme vastaa näiden sivustojen sisällöstä tai tietosuojakäytännöistä. Suosittelemme tutustumaan vierailemiesi sivustojen tietosuojakäytäntöihin.</p>
+<h2>Kyselyt ja kilpailut</h2>
+<p>Osallistuminen verkkosivustomme kyselyihin tai kilpailuihin on täysin vapaaehtoista. Kerättyjä tietoja (kuten nimi, osoite tai demografiset tiedot) käytetään ainoastaan kyselyn tai kilpailun järjestämiseen ja voittajille ilmoittamiseen.</p>
+<h2>Muutokset tähän tietosuojaselosteeseen</h2>
+<p>Voimme päivittää tätä tietosuojaselostetta tarvittaessa. Merkittävistä muutoksista kerrotaan tällä sivulla ja tarvittaessa myös suoraan sinulle.</p>
+<h2>Ota yhteyttä</h2>
+<p>Jos sinulla on kysyttävää, huolia tai pyyntöjä tähän tietosuojaselosteeseen tai henkilötietoihisi liittyen, ota meihin yhteyttä:</p>
+<p>Sähköposti: {M}</p>"""
+
+PRIVACY_SV = f"""<h1 class="page-title">Integritetspolicy</h1>
+<p>Vi värnar om din integritet. I den här integritetspolicyn förklarar vi hur vi hanterar uppgifter som samlas in via vår webbplats (www.sanapsis.com) och våra appar SanapsisPro och Sanapsis+.</p>
+<p>Personuppgiftsansvarig för dina personuppgifter är Puheklinikka Oy (Sanapsis) i Finland. Du kan kontakta oss på {M}.</p>
+<h2>Uppgifter vi samlar in</h2>
+<p><strong>Webbplatsen (www.sanapsis.com):</strong></p>
+<ul>
+<li>Uppgifter som du frivilligt ger oss (till exempel namn och e-postadress när du kontaktar oss direkt, via supportformulär eller i enkäter).</li>
+<li>Kakor (cookies) för att förbättra webbplatsens funktion och användarupplevelsen.</li>
+<li>Vi samlar inte in känsliga personuppgifter (till exempel ekonomiska uppgifter eller hälsouppgifter).</li>
+</ul>
+<p><strong>Apparna (SanapsisPro och Sanapsis+):</strong></p>
+<ul>
+<li>Vi samlar inte in, lagrar eller delar några personuppgifter via våra appar.</li>
+<li>Våra appar har inte åtkomst till platsuppgifter, kontakter, foton eller enhetsidentifierare.</li>
+<li>Sanapsis+ använder mikrofonen så att du kan lyssna på ditt eget tal. Inspelningarna sparas eller delas inte.</li>
+<li>Ingen registrering eller inloggning krävs för att använda apparna.</li>
+<li>Inga analys- eller annonstjänster eller spårningsverktyg från tredje part används.</li>
+</ul>
+<h2>Hur vi använder dina uppgifter</h2>
+<p>Vi använder uppgifter som samlas in via vår webbplats för att svara på förfrågningar och ge kundsupport, förbättra vår webbplats och våra tjänster samt informera dig om uppdateringar, erbjudanden eller ändringar i denna integritetspolicy (om du har samtyckt till det). Vi säljer, hyr ut eller delar inte dina personuppgifter med tredje part, utom när det behövs för att uppfylla din begäran eller rättsliga förpliktelser.</p>
+<h2>Rättslig grund för behandlingen (GDPR)</h2>
+<p>Om du befinner dig inom Europeiska ekonomiska samarbetsområdet (EES) behandlar vi dina personuppgifter på följande rättsliga grunder:</p>
+<ul>
+<li>Ditt samtycke – för kontakt som du själv tar med oss</li>
+<li>Berättigat intresse – för att driva, underhålla och förbättra våra tjänster och vår kommunikation</li>
+</ul>
+<h2>Lagring av uppgifter</h2>
+<p>Vi sparar korrespondens med användare endast så länge som det behövs för det ursprungliga syftet eller för att uppfylla rättsliga förpliktelser.</p>
+<p>Inga uppgifter om appanvändare samlas in eller sparas.</p>
+<h2>Dina rättigheter enligt GDPR</h2>
+<p>Om du befinner dig inom Europeiska ekonomiska samarbetsområdet (EES) har du följande rättigheter när det gäller dina personuppgifter:</p>
+<ul>
+<li>Rätt till tillgång – begära en kopia av de uppgifter vi har om dig.</li>
+<li>Rätt till rättelse – begära att vi rättar eller uppdaterar dina uppgifter.</li>
+<li>Rätt till radering (”rätten att bli bortglömd”) – begära att vi raderar dina personuppgifter.</li>
+<li>Rätt att invända – invända mot hur vi behandlar dina uppgifter när behandlingen grundar sig på berättigat intresse.</li>
+<li>Rätt till begränsning av behandling – begära att vi begränsar hur vi använder dina uppgifter.</li>
+<li>Rätt till dataportabilitet – få dina uppgifter i ett strukturerat, maskinläsbart format.</li>
+<li>Rätt att lämna in klagomål – lämna in ett klagomål till din lokala dataskyddsmyndighet.</li>
+</ul>
+<p>Om du vill utöva någon av dessa rättigheter, kontakta oss på {M}.</p>
+<p>Om du anser att vi har kränkt dina rättigheter enligt GDPR har du rätt att lämna in ett klagomål till din lokala dataskyddsmyndighet.</p>
+<h2>Din tillgång till och kontroll över uppgifterna</h2>
+<p>Du kan när som helst tacka nej till framtida kommunikation från oss genom att kontakta oss på {M}. Du kan se vilka uppgifter vi har om dig (om några), begära rättelse eller uppdatering, begära att dina uppgifter raderas eller framföra synpunkter på hur vi använder dina uppgifter.</p>
+<h2>Säkerhet</h2>
+<p>Vi vidtar lämpliga tekniska och organisatoriska åtgärder för att skydda dina uppgifter. Kommunikationen på webbplatsen krypteras med SSL/TLS-protokoll. Åtkomst till personuppgifter är begränsad till de anställda som behöver dem för kundsupport. Våra servrar finns i säkra lokaler. Vi samlar inte in känsliga uppgifter (såsom ekonomiska uppgifter eller hälsouppgifter) via vår webbplats eller våra appar.</p>
+<h2>Kakor</h2>
+<p>Vår webbplats använder kakor för att känna igen återkommande besökare, spara användarinställningar och analysera trafiken på webbplatsen. Kakorna förbättrar webbplatsens funktion men är inte kopplade till uppgifter som kan identifiera dig personligen. Du kan styra inställningarna för kakor i din webbläsare.</p>
+<h2>Länkar till andra webbplatser</h2>
+<p>Vår webbplats kan innehålla länkar till externa webbplatser. Vi ansvarar inte för innehållet eller integritetspraxis på dessa webbplatser. Vi uppmanar dig att läsa integritetspolicyn för de webbplatser du besöker.</p>
+<h2>Enkäter och tävlingar</h2>
+<p>Deltagande i enkäter eller tävlingar på vår webbplats är helt frivilligt. Uppgifter som samlas in (till exempel namn, adress eller demografiska uppgifter) används endast för att genomföra enkäten eller tävlingen och för att meddela vinnarna.</p>
+<h2>Ändringar i denna integritetspolicy</h2>
+<p>Vi kan uppdatera denna integritetspolicy vid behov. Betydande ändringar publiceras på den här sidan och meddelas vid behov direkt till dig.</p>
+<h2>Kontakta oss</h2>
+<p>Om du har frågor, synpunkter eller önskemål som gäller denna integritetspolicy eller dina personuppgifter, kontakta oss:</p>
+<p>E-post: {M}</p>"""
+
+
 def privacy(lang):
-    if lang == "en":
-        content = PRIVACY_EN
-    else:
-        name = {"fi": "Finnish", "sv": "Swedish"}[lang]
-        content = f'<h1 class="page-title">{UI[lang]["f_privacy"]}</h1>\n<p>{fi_ph("Privacy notice in " + name)}</p>'
+    content = {"en": PRIVACY_EN, "fi": PRIVACY_FI, "sv": PRIVACY_SV}[lang]
     body = f'      <div class="pad legal">\n{content}\n      </div>'
     return page(lang, "privacy/", "Privacy Notice | Sanapsis", "How Sanapsis handles personal data.", body)
 

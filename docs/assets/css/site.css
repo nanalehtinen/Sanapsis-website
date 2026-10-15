@@ -294,7 +294,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .post-nav .older { text-align: right; }
 
 /* Privacy */
-.legal { padding-top: 32px; padding-bottom: 64px; max-width: 820px; }
+.legal { padding-top: 32px; padding-bottom: 64px; }
 .legal h2 { font-weight: 600; font-size: 20px; margin-top: 32px; }
 .legal p, .legal li { font-size: 16px; line-height: 1.7; }
 .legal ul { padding-left: 20px; }
