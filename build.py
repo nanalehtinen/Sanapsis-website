@@ -764,7 +764,7 @@ CHAT_LIVE = False
 DOMAIN = "www.sanapsis.com"
 # Off until the DNS switch, so the site can be tested at nanalehtinen.github.io/Sanapsis-website/ (Nana, 18 Oct 2026).
 # Set DOMAIN_LIVE = True right before the DNS records are changed.
-DOMAIN_LIVE = False
+DOMAIN_LIVE = True
 
 # Old Squarespace addresses -> new pages, so old links and search results keep working (18 Oct 2026).
 # The old Finnish and Swedish pages were Sanapsis+ pages. "contact" was the old contact/bug form.
