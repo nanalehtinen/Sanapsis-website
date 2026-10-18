@@ -179,7 +179,49 @@ def footer(lang):
   </footer>"""
 
 
-def page(lang, slug, title, description, body):
+# Social preview (Open Graph) tags, added 15-18 Oct 2026. Links must be absolute, so they point at the live domain.
+SITE_URL = "https://www.sanapsis.com/"
+OG_LOCALE = {"en": "en_US", "fi": "fi_FI", "sv": "sv_FI"}
+# Finnish and Swedish page titles and descriptions: Claude's wording (18 Oct 2026), for Nana to check.
+META_L10N = {
+    "": {"fi": ("Sanapsis", "Sanapsis-sovellukset puheterapiaan: SanapsisPro ja Sanapsis+."),
+         "sv": ("Sanapsis", "Sanapsis-appar för talterapi: SanapsisPro och Sanapsis+.")},
+    "pro/": {"fi": ("SanapsisPro | Sanapsis", "SanapsisPro: iPad-sovellus puheterapeuteille aikuisneurologiseen puheterapiaan."),
+             "sv": ("SanapsisPro | Sanapsis", "SanapsisPro: en iPad-app för talterapeuter som arbetar med vuxna.")},
+    "plus/": {"fi": ("Sanapsis+ | Sanapsis", "Sanapsis+: puheen ja kielen kotiharjoitteluun iPadilla ja Android-laitteilla."),
+              "sv": ("Sanapsis+ | Sanapsis", "Sanapsis+: övning av tal och språk hemma på iPad och Android.")},
+    "about/": {"fi": ("Meistä | Sanapsis", "Tietoa Sanapsiksesta ja sen tekijöistä."),
+               "sv": ("Om oss | Sanapsis", "Om Sanapsis och teamet bakom apparna.")},
+    "support/": {"fi": ("Tuki | Sanapsis", "Ilmoita virheestä tai ota yhteyttä Sanapsis-tiimiin."),
+                 "sv": ("Support | Sanapsis", "Rapportera ett fel eller kontakta Sanapsis-teamet.")},
+    "privacy/": {"fi": ("Tietosuojaseloste | Sanapsis", "Miten Sanapsis käsittelee henkilötietoja."),
+                 "sv": ("Integritetspolicy | Sanapsis", "Hur Sanapsis hanterar personuppgifter.")},
+}
+BLOG_DESC = {"en": "News and updates about the Sanapsis apps.",
+             "fi": "Uutisia ja päivityksiä Sanapsis-sovelluksista (englanniksi).",
+             "sv": "Nyheter och uppdateringar om Sanapsis-apparna (på engelska)."}
+OG_IMAGE = {"pro/": "og/pro.jpg", "plus/": "og/plus.jpg", "about/": "og/about.jpg"}
+
+
+def og_tags(lang, slug, title, description, image):
+    image = image or OG_IMAGE.get(slug, "og/home.jpg")
+    full = SITE_URL + prefix(lang) + slug
+    e = lambda v: html.escape(v, quote=True)
+    return "\n  ".join([
+        '<meta property="og:type" content="website">',
+        '<meta property="og:site_name" content="Sanapsis">',
+        f'<meta property="og:title" content="{e(html.unescape(title))}">',
+        f'<meta property="og:description" content="{e(description)}">',
+        f'<meta property="og:url" content="{e(full)}">',
+        f'<meta property="og:image" content="{SITE_URL}assets/img/{image}">',
+        f'<meta property="og:locale" content="{OG_LOCALE[lang]}">',
+        '<meta name="twitter:card" content="summary_large_image">',
+    ])
+
+
+def page(lang, slug, title, description, body, image=None):
+    if lang in META_L10N.get(slug, {}):
+        title, description = META_L10N[slug][lang]
     alternates = "\n  ".join(
         f'<link rel="alternate" hreflang="{l}" href="{url(l, slug)}">' for l in LANGS)
     return f"""<!doctype html>
@@ -189,6 +231,7 @@ def page(lang, slug, title, description, body):
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
   <meta name="description" content="{html.escape(description)}">
+  {og_tags(lang, slug, title, description, image)}
   {alternates}
   <link rel="icon" href="ASSET/../favicon.ico">
   <link rel="stylesheet" href="ASSET/css/site.css?v={CSS_VERSION}">
@@ -628,7 +671,7 @@ def blog_list(lang, cat, label, posts, n, pages):
     title = "Blog | Sanapsis" if not cat else f"{label} | Sanapsis Blog"
     if n > 1:
         title = f"Page {n} | " + title
-    return slug, page(lang, slug, title, "News and updates about the Sanapsis apps.", body)
+    return slug, page(lang, slug, title, BLOG_DESC[lang], body)
 
 
 def blog_post(lang, i):
@@ -651,7 +694,8 @@ def blog_post(lang, i):
         </div>
         <nav class="post-nav" aria-label="More posts">{''.join(nav)}</nav>
       </article>"""
-    return slug, page(lang, slug, f"{html.escape(post['title'])} | Sanapsis Blog", post["excerpt"], body)
+    image = f"blog/{post['lead']}" if post["lead"] else None
+    return slug, page(lang, slug, f"{html.escape(post['title'])} | Sanapsis Blog", post["excerpt"], body, image)
 
 
 def blog_routes():
