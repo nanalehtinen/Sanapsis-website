@@ -11,8 +11,7 @@ DPO = '<a href="https://tietosuoja.fi">tietosuoja.fi</a>'
 
 PRIVACY_EN = f"""<h1 class="page-title">Privacy Notice</h1>
 <p class="legal-date">Last updated: 15 October 2026</p>
-<h2>Who we are</h2>
-<p>Sanapsis is run by Puheklinikka Oy, Finland. We are the controller of your personal data. Contact: {M}.</p>
+<p>The Sanapsis apps are developed by Puheklinikka NET Oy, which is the controller of your personal data. Contact: {M}.</p>
 <h2>The apps</h2>
 <p>SanapsisPro and Sanapsis+ do not collect, store or share personal data. They need no account or login, and they contain no analytics, advertising or tracking. They do not access your location, contacts, photos or device identifiers. Sanapsis+ uses the microphone so that you can listen back to your own speech. Recordings are not saved or shared.</p>
 <h2>The website</h2>
@@ -38,8 +37,7 @@ PRIVACY_EN = f"""<h1 class="page-title">Privacy Notice</h1>
 
 PRIVACY_FI = f"""<h1 class="page-title">Tietosuojaseloste</h1>
 <p class="legal-date">Päivitetty: 15.10.2026</p>
-<h2>Kuka vastaa tiedoistasi</h2>
-<p>Sanapsiksen takana on Puheklinikka Oy, Suomi. Olemme henkilötietojesi rekisterinpitäjä. Yhteystiedot: {M}.</p>
+<p>Sanapsis sovellukset on kehittänyt Puheklinikka NET Oy ja Puheklinikka NET Oy toimii henkilötietojen rekisterinpitäjänä. Yhteystiedot: {M}.</p>
 <h2>Sovellukset</h2>
 <p>SanapsisPro ja Sanapsis+ eivät kerää, tallenna tai jaa henkilötietoja. Niiden käyttö ei vaadi tiliä tai kirjautumista, eikä niissä ole analytiikkaa, mainontaa tai seurantaa. Sovellukset eivät käytä sijaintitietoja, yhteystietoja, valokuvia tai laitetunnisteita. Sanapsis+ käyttää mikrofonia, jotta voit kuunnella oman puheesi. Äänitteitä ei tallenneta eikä jaeta.</p>
 <h2>Verkkosivusto</h2>
@@ -65,8 +63,7 @@ PRIVACY_FI = f"""<h1 class="page-title">Tietosuojaseloste</h1>
 
 PRIVACY_SV = f"""<h1 class="page-title">Integritetspolicy</h1>
 <p class="legal-date">Uppdaterad: 15.10.2026</p>
-<h2>Vem vi är</h2>
-<p>Sanapsis drivs av Puheklinikka Oy, Finland. Vi är personuppgiftsansvariga för dina personuppgifter. Kontakt: {M}.</p>
+<p>Sanapsis-apparna har utvecklats av Puheklinikka NET Oy, som är personuppgiftsansvarig för dina personuppgifter. Kontakt: {M}.</p>
 <h2>Apparna</h2>
 <p>SanapsisPro och Sanapsis+ samlar inte in, sparar eller delar personuppgifter. De kräver inget konto eller någon inloggning och innehåller ingen analys, reklam eller spårning. Apparna har inte åtkomst till din plats, dina kontakter, foton eller enhetsidentifierare. Sanapsis+ använder mikrofonen så att du kan lyssna på ditt eget tal. Inspelningarna sparas eller delas inte.</p>
 <h2>Webbplatsen</h2>
