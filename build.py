@@ -762,6 +762,9 @@ CHAT_LIVE = False
 
 # The new site's domain. GitHub Pages reads it from docs/CNAME.
 DOMAIN = "www.sanapsis.com"
+# Off until the DNS switch, so the site can be tested at nanalehtinen.github.io/Sanapsis-website/ (Nana, 18 Oct 2026).
+# Set DOMAIN_LIVE = True right before the DNS records are changed.
+DOMAIN_LIVE = False
 
 # Old Squarespace addresses -> new pages, so old links and search results keep working (18 Oct 2026).
 # The old Finnish and Swedish pages were Sanapsis+ pages. "contact" was the old contact/bug form.
@@ -820,8 +823,11 @@ def main():
     write(os.path.join(ROOT, "404.html"), not_found())
     for old, new in redirects().items():
         write(os.path.join(ROOT, old, "index.html"), redirect_page(old, new))
-    if not PREVIEW:
-        write(os.path.join(ROOT, "CNAME"), DOMAIN + "\n")
+    cname = os.path.join(ROOT, "CNAME")
+    if not PREVIEW and DOMAIN_LIVE:
+        write(cname, DOMAIN + "\n")
+    elif os.path.exists(cname):
+        os.remove(cname)
     print("Built", len(LANGS) * (len(BUILDERS) + len(blog_slugs())) + 1, "pages into", ROOT)
 
 
