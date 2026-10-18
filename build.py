@@ -567,8 +567,7 @@ def support(lang):
     # Claude changed "using the form below" to the email wording; highlight removed at Nana's request (15 Oct 2026).
     bug_text = f('Please let us know using the form below. Include the name of the exercise, a description of the task (what you see on the screen), and details of the bug or issue. The more specific, the better. Screenshots are helpful too!')
     mailto = f"mailto:{LINKS['email']}?subject={urllib.parse.quote(mail_subject)}"
-    body = f"""      <div class="pad page-head"><h1 class="page-title">{f('Support')}</h1></div>
-      <div class="faq" id="faq">
+    faq = f"""      <div class="faq" id="faq">
         <h2>{f('Frequently asked questions')}</h2>
         <div class="chat-card" aria-label="Chat (placeholder)">
           <div class="chat-head"><span class="chat-avatar"><img src="ASSET/img/icon.svg" alt="" width="22" height="20"></span>Sanapsis</div>
@@ -582,7 +581,10 @@ def support(lang):
         </div>
         <p class="chat-note">{ph("stand.chat chat box goes here")}</p>
       </div>
-      <div class="pad two-col">
+"""
+    # The chat mock-up stays hidden until stand.chat is configured (Nana, 18 Oct 2026): set CHAT_LIVE = True then.
+    body = f"""      <div class="pad page-head"><h1 class="page-title">{f('Support')}</h1></div>
+{faq if CHAT_LIVE else ""}      <div class="pad two-col">
         <div class="main form" id="report">
           <div class="accent-line"></div>
           <h2>{f('Report a bug')}</h2>
@@ -756,6 +758,52 @@ def write(path, text):
         fh.write(text)
 
 
+CHAT_LIVE = False
+
+# The new site's domain. GitHub Pages reads it from docs/CNAME.
+DOMAIN = "www.sanapsis.com"
+
+# Old Squarespace addresses -> new pages, so old links and search results keep working (18 Oct 2026).
+# The old Finnish and Swedish pages were Sanapsis+ pages. "contact" was the old contact/bug form.
+OLD_PAGES_REDIRECT = {
+    "home/": "", "sanapsis/": "pro/", "sanapsis-plus/": "plus/",
+    "sanapsis-fi/": "fi/plus/", "sanapsis-sv/": "sv/plus/",
+    "report-a-bug/": "support/", "contact/": "support/", "privacy-notice/": "privacy/",
+}
+
+
+def redirect_page(old, new):
+    """A tiny page at the old address that sends the visitor to the new one."""
+    target = "../" * old.count("/") + new
+    if PREVIEW:
+        target += "index.html"
+    full = SITE_URL + new
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sanapsis</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{full}">
+  <meta http-equiv="refresh" content="0; url={target or './'}">
+  <script>location.replace({json.dumps(target or './')});</script>
+</head>
+<body>
+  <p>This page has moved: <a href="{target or './'}">{full}</a></p>
+</body>
+</html>
+"""
+
+
+def redirects():
+    pages = dict(OLD_PAGES_REDIRECT)
+    for post in BLOG_POSTS:
+        old = post["old_url"].strip("/") + "/"
+        if old != f"blog/{post['slug']}/":
+            pages[old] = f"blog/{post['slug']}/"
+    return pages
+
+
 def main():
     global BASE, CUR_LANG
     for lang in LANGS:
@@ -770,6 +818,10 @@ def main():
             write(os.path.join(ROOT, rel, "index.html"), blog_render(lang, slug))
     BASE = ""
     write(os.path.join(ROOT, "404.html"), not_found())
+    for old, new in redirects().items():
+        write(os.path.join(ROOT, old, "index.html"), redirect_page(old, new))
+    if not PREVIEW:
+        write(os.path.join(ROOT, "CNAME"), DOMAIN + "\n")
     print("Built", len(LANGS) * (len(BUILDERS) + len(blog_slugs())) + 1, "pages into", ROOT)
 
 
