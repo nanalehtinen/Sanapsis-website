@@ -807,20 +807,35 @@ def redirects():
     return pages
 
 
+def sitemap(pages):
+    """List of the real pages for search engines (30 Oct 2026). Redirect pages are left out."""
+    urls = "\n".join(f"  <url><loc>{SITE_URL}{rel}</loc></url>" for rel in pages)
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{urls}
+</urlset>
+"""
+
+
 def main():
     global BASE, CUR_LANG
+    pages = []
     for lang in LANGS:
         CUR_LANG = lang
         for slug, build in BUILDERS.items():
             rel = prefix(lang) + slug
             BASE = "../" * rel.count("/")
             write(os.path.join(ROOT, rel, "index.html"), build(lang))
+            pages.append(rel)
         for slug in blog_slugs():
             rel = prefix(lang) + slug
             BASE = "../" * rel.count("/")
             write(os.path.join(ROOT, rel, "index.html"), blog_render(lang, slug))
+            pages.append(rel)
     BASE = ""
     write(os.path.join(ROOT, "404.html"), not_found())
+    write(os.path.join(ROOT, "sitemap.xml"), sitemap(pages))
+    write(os.path.join(ROOT, "robots.txt"), f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}sitemap.xml\n")
     for old, new in redirects().items():
         write(os.path.join(ROOT, old, "index.html"), redirect_page(old, new))
     cname = os.path.join(ROOT, "CNAME")
