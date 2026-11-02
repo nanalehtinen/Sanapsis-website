@@ -288,6 +288,14 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .post-body figcaption, .post-body figcaption p { margin: 0; font-size: 14px; color: var(--muted); text-align: center; }
 .post-body blockquote { border-left: 4px solid var(--pro); padding-left: 16px; font-style: italic; }
 .post-body hr { border: 0; border-top: 1px solid var(--line); margin: 2em 0; }
+.post-body figure.right { float: right; width: 48%; margin: 4px 0 1em 28px; }
+.post-body figure.right img { margin-top: 0; }
+.post-body figure.right figcaption, .post-body figure.right figcaption p { text-align: left; }
+.post-body h2, .post-body h3, .post-body ul.dash { clear: both; }
+@media (max-width: 760px) { .post-body figure.right { float: none; width: auto; margin: 0 0 1.4em; } }
+.post-body ul.dash { list-style: none; padding-left: 0; }
+.post-body ul.dash li { padding-left: 1.2em; text-indent: -1.2em; }
+.post-body ul.dash li::before { content: "– "; }
 .post-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); }
 .post-nav a { flex: 1 1 260px; display: flex; flex-direction: column; gap: 4px; text-decoration: none; font-family: var(--heading-font); font-weight: 600; color: var(--ink); }
 .post-nav a span { font-family: var(--body-font); font-weight: 400; font-size: 14px; color: var(--muted); }
