@@ -292,7 +292,23 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .post-body figure.right img { margin-top: 0; }
 .post-body figure.right figcaption, .post-body figure.right figcaption p { text-align: left; }
 .post-body h2, .post-body h3, .post-body ul.dash { clear: both; }
-@media (max-width: 760px) { .post-body figure.right { float: none; width: auto; margin: 0 0 1.4em; } }
+.post-body figure.right { clear: right; }
+.post-body figure.right.tall { width: 34%; }
+.post-body figure.tall:not(.right) { max-width: 50%; margin-left: auto; margin-right: auto; }
+.post-body figure.mid { max-width: 62%; margin-left: auto; margin-right: auto; }
+.post-body hr { clear: both; }
+.post-body ul, .post-body ol { overflow: hidden; }
+.post-body::after { content: ""; display: block; clear: both; }
+.post-body .grid2 { clear: both; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin: 0 0 1.4em; }
+.post-body .grid2 figure { margin: 0; }
+.post-body .grid2 img { margin: 0 0 6px; }
+.post-body .grid2 figcaption h3 { clear: none; margin: 0; font-size: 15px; font-weight: 600; color: inherit; }
+@media (max-width: 760px) {
+  .post-body figure.right, .post-body figure.right.tall { float: none; width: auto; margin: 0 0 1.4em; }
+  .post-body figure.tall { max-width: 70%; margin-left: auto; margin-right: auto; }
+  .post-body figure.mid { max-width: none; }
+}
+@media (max-width: 480px) { .post-body .grid2 { grid-template-columns: 1fr; } }
 .post-body ul.dash { list-style: none; padding-left: 0; }
 .post-body ul.dash li { padding-left: 1.2em; text-indent: -1.2em; }
 .post-body ul.dash li::before { content: "– "; }
