@@ -292,7 +292,7 @@ h1, h2, h3 { font-family: var(--heading-font); color: var(--ink); margin: 0; }
 .post-body figure.right img { margin-top: 0; }
 .post-body figure.right figcaption, .post-body figure.right figcaption p { text-align: left; }
 .post-body h2, .post-body h3, .post-body ul.dash { clear: both; }
-.post-body figure.right { clear: both; }
+.post-body figure.right { clear: right; }
 .post-body figure.right.tall { width: 34%; }
 .post-body figure.tall:not(.right) { max-width: 50%; margin-left: auto; margin-right: auto; }
 .post-body figure.mid { max-width: 62%; margin-left: auto; margin-right: auto; }
