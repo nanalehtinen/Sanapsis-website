@@ -807,6 +807,27 @@ def redirects():
     return pages
 
 
+def sitemap():
+    """sitemap.xml for search engines (Google Search Console), added 15 Nov 2026.
+    Lists every real page in all languages; leaves out the old-address redirect pages and 404."""
+    dates = {f"blog/{p['slug']}/": p["date"] for p in BLOG_POSTS}
+    rows = []
+    for lang in LANGS:
+        for slug in list(BUILDERS) + blog_slugs():
+            lastmod = f"<lastmod>{dates[slug]}</lastmod>" if slug in dates else ""
+            rows.append(f"  <url><loc>{html.escape(SITE_URL + prefix(lang) + slug)}</loc>{lastmod}</url>")
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+            + "\n".join(rows) + "\n</urlset>\n")
+
+
+ROBOTS = f"""User-agent: *
+Allow: /
+
+Sitemap: {SITE_URL}sitemap.xml
+"""
+
+
 def main():
     global BASE, CUR_LANG
     for lang in LANGS:
@@ -823,6 +844,9 @@ def main():
     write(os.path.join(ROOT, "404.html"), not_found())
     for old, new in redirects().items():
         write(os.path.join(ROOT, old, "index.html"), redirect_page(old, new))
+    if not PREVIEW:
+        write(os.path.join(ROOT, "sitemap.xml"), sitemap())
+        write(os.path.join(ROOT, "robots.txt"), ROBOTS)
     cname = os.path.join(ROOT, "CNAME")
     if not PREVIEW and DOMAIN_LIVE:
         write(cname, DOMAIN + "\n")
